@@ -1,0 +1,78 @@
+* {
+    margin: 0px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-decoration: none;
+    box-sizing: border-box; 
+}
+
+body{
+    background-color: #7C898B;
+}
+.detailsContainer {
+    position: relative;
+    display: flex;
+    margin-top: 10px;
+    top: 100%; 
+    height: auto;
+    width: 100%;
+    overflow: hidden;
+    color:black;
+}
+#profile img{
+    margin-left: 10px;
+    border:5px solid #253439;
+    height:350px;
+    width:min-content;
+}
+#details{
+    position: relative;
+    margin-left: 20px;
+    margin-top: 10px;
+    width:100%;
+    margin-right:300px;
+    font-size: 18px;
+}
+
+#name,#bio,#knowMore{
+    color:black;
+    margin-bottom:20px;
+}
+#name{
+    font-size: 40px;
+}
+.filmography{
+    display:flex;
+    flex-wrap: wrap;
+    text-align: center;
+    text-decoration: none;
+    margin-top:15px;
+    justify-content: space-around;
+    margin-bottom: 5px;
+}
+.filmography img{
+    border:5px solid #253439;
+    text-decoration: none;
+    width: 200px;
+    height:304px;
+    transition: transform 0.3s ease;
+    cursor:pointer;
+}
+.filmography p{
+    max-width: 200px;
+    color:black;
+    margin-top:5px;
+    margin-bottom:10px;
+}
+h2{
+    color:black;
+    margin-top:10px;
+    margin-bottom: 10px;
+    border:2px solid #B29E84 ;
+    border-top:transparent;
+    border-left:transparent;
+    border-right:transparent;
+    margin-left: 10px;
+    padding-bottom: 5px;
+   
+}
+

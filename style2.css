@@ -1,0 +1,98 @@
+* {
+    margin: 0px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-decoration: none;
+    box-sizing: border-box; 
+}
+
+body{
+    background-color: #7C898B;
+}
+.moviecontainer {
+    position: relative;
+    display: flex;
+    margin-top: 10px;
+    top: 100%; 
+    height: auto;
+    width: 100%;
+    overflow: hidden;
+    color:black;
+}
+#poster img{
+    width:200px;
+    margin-left: 10px;
+    border:5px solid #253439;
+    height:304px;
+    width:min-content;
+}
+.movieDetails{
+    position: relative;
+    margin-left: 20px;
+    margin-top: 10px;
+    width:100%;
+    margin-right:300px;
+    font-size: 18px;
+}
+#movieName,#description,#director,#runtimeLang{
+    color:black;
+    margin-bottom:20px;
+}
+#movieName{
+    font-size: 30px;
+}
+
+h2{
+    margin-top: 30px;
+    margin-left:10px;
+    color:#253439;
+    border:2px solid #253439;
+    border-right: transparent;
+    border-top: transparent;
+    border-left: transparent;
+    border-color:#B29E84;
+    margin-bottom:10px;
+    font-size: 30px;
+}
+  /* Individual slide */
+.cast-slide {
+  flex: 0 0 auto; /* Prevent slides from shrinking */
+}
+  
+/* Slide image */
+.swiper-slide img {
+  max-width: 170px; 
+  margin-left: 10px;
+  height: auto;
+  border-radius: 8px; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border:2px solid #253439 
+}
+ 
+  
+/* Slide name */
+.swiper-slide p {
+  margin-left: 10px;
+  margin-top: 5px; /* Space between image and name */
+  text-align: left; /* Center text */
+  font-size: 14px; /* Adjust font size */
+  color:black;
+}
+
+.swiper {
+  width: 100%;
+  height: 300px;
+  margin: 20px auto;
+}
+
+.swiper-button-next, .swiper-button-prev {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10; /* Ensure the arrows are above other elements */
+  cursor: pointer;
+}
+#directorLink{
+  color:black;
+  font-weight: bold;
+  font-style: italic;
+}
