@@ -1,0 +1,226 @@
+* {
+    margin: 0px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-decoration: none;
+    box-sizing: border-box; 
+}
+body{
+    background-color: #7C898B;
+}
+h2{
+    margin-top:10px;
+    margin-left:10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: bottom;
+    border:3px #B29E84 transparent;
+    border-bottom: 3px #B29E84 solid;
+    box-shadow: #253439
+}
+h2 p{
+    font-style: italic;
+    color:#253439;
+    margin-bottom: 5px;
+}
+.viewMore{
+    margin-right: 15px;
+    position: relative;
+    margin-top: 16px;
+}
+.swiper {
+    width: 100%;
+    height: 400px;
+    margin:0px;
+}
+
+ 
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #7C898B; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    object-fit: cover;
+}
+.poster-image {
+    display: flex;
+    position: inherit;
+    margin: 10px;
+    top: 0;
+    left: 0;
+    height: 300px;
+    object-fit: cover;
+    border:2px solid #B29E84;
+    z-index: 2; /* Set higher z-index for poster image */
+}
+.autoscrolldisplay .background-image{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 400px;
+    filter: blur(5px);
+    z-index: 1; /* Set higher z-index for background image */
+}
+.autoscrolldisplay .details {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 20px; 
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff; 
+    width: 100%;
+    box-sizing: border-box; 
+    z-index: 3; 
+}
+
+/* Styles for title and description */
+.autoscrolldisplay .details a {
+    font-size: 24px; 
+    font-weight: bold; 
+    text-decoration: none; 
+    color: #fff; 
+    margin-bottom: 10px; 
+}
+
+.autoscrolldisplay .details p {
+    font-size: 16px; 
+    margin: 10px; 
+}
+
+.autoscrolldisplay .imageTag{
+    position: inherit;
+}
+.autoscrolldisplay .autoplay-progress {
+    position: absolute;
+    right: 16px;
+    bottom: 16px;
+    z-index: 10;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: var(--swiper-theme-color);
+    visibility: hidden;
+  }
+  
+  /* Individual slide */
+.autoscrolldisplay .movie-slide {
+    flex: 0 0 auto; /* Prevent slides from shrinking */
+    margin-right: 20px;
+  }
+  
+  /* Slide image */
+.autoscrolldisplay .movie-slide img {
+    max-width: 200px; /* Ensure images don't exceed container width */
+    height: auto;
+    border-radius: 8px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border:2px solid #253439 
+}
+  
+  /* Slide name */
+.autoscrolldisplay  .movie-slide p {
+    margin-top: 5px; /* Space between image and name */
+    text-align: center; /* Center text */
+    font-size: 14px; /* Adjust font size */
+    color:black;
+}
+h2{
+    margin-top: 30px;
+    margin-left:10px;
+    color:#253439;
+    border:2px solid #253439;
+    border-right: transparent;
+    border-top: transparent;
+    border-left: transparent;
+    border-color:#B29E84;
+    font-size: 30px;
+}
+
+h2 a{
+    font-size: 15px;
+    margin-left:940px;
+    color:#253439;
+
+}
+
+ .containers .swiper-slide img {
+    max-width: 170px; 
+    
+    height: auto;
+    /* border:2px solid #253439 ; */
+    display: flex;
+    justify-content: center;
+    border-radius: 8px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+   
+  .containers .swiper-slide p {
+    margin-left: 10px;
+    margin-top: 5px;
+    text-align: center; 
+    color:black;
+  }
+  .swiper-slide {
+    margin-bottom:10px;
+  }
+  .containers .swiper {
+    width: 100%;
+    height:auto;
+    margin: 20px auto;
+  }
+  .containers .swiper-wrapper {
+    padding: 10px;
+  }
+  .containers .swiper-slide img:hover{
+    transform: scale(1.05);
+    border:5px solid #B29E84;
+    overflow: visible;
+  }
+  
+  .containers .swiper-button-next, .swiper-button-prev {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10; 
+    cursor: pointer;
+  }
+
+
+.swiper-button-prev {
+    visibility: visible;
+}
+
+@media screen and (min-width: 0px) {
+    .swiper-button-next,
+    .swiper-button-prev {
+        visibility: visible;
+    }
+}
+::-webkit-scrollbar{
+    width:0.2em;
+    background-color:#7C898B;
+    tab-size: 1em;
+}
+::-webkit-scrollbar-thumb{
+    background-color:#253439;
+    border-radius:2em;
+}
+::-webkit-scrollbar-track{
+    margin-block: .5em;
+    border-radius:100vw;
+    background-color:#B29E84;
+    height: 4px; 
+}
+::-webkit-scrollbar:hover{
+    width:0.5em;
+}
+

@@ -1,0 +1,81 @@
+* {
+    margin: 0px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color:#B29E84;
+    text-decoration: none;
+    box-sizing: border-box; 
+}
+
+.navbar {
+    height: 60px;
+    width:100%;
+    font-size: 20px;
+    background-color: #253439;
+    color: #B29E84;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    top:0px;
+}
+
+.navlogo a{
+    height: 50px;
+    width: 130px;
+    font-size:30px;
+    font-family:cursive;
+    text-decoration: none
+}
+
+#Menu{
+    background-color: #253439;
+    color:#B29E84;
+    border:transparent;
+    font-size: 20px;
+}
+.fa-sharp fa-solid fa-magnifying-glass{
+    background-color: #253439;
+    color:#B29E84
+}
+input{
+    border-top-left-radius: 4%;
+    border-bottom-left-radius: 4%;
+}
+button{
+    background-color: #253439;
+    border-style: none;
+    cursor:pointer
+}
+
+.footer{
+    position: absolute bottom;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    height:100px;
+    margin-top:20px;
+    color:#B29E84;
+    background-color:#253439;
+    font-size: larger;
+}
+
+
+
+/* Add new CSS for responsiveness */
+@media only screen and (max-width: 768px) {
+    .navbar{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        font-size: small;
+
+    }
+    #Menu{
+        font-size: 10px;
+    }
+    input{
+        width: 52px;
+    }
+    .navlogoborder{
+        font-size: 20px;
+    }
+}
