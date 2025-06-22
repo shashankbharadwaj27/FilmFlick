@@ -55,9 +55,6 @@ FilmFlick/
 ### 🔹 Journal Page
 ![Journal](./client/src/screenshots/journal.png)
 
-### 🔹 Review Page
-![Review](./client/src/screenshots/review.png)
-
 ### 🔹 Movie Detials Page
 ![Movie-details](./client/src/screenshots/movie-details.png)
 
