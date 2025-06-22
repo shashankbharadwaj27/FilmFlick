@@ -27,7 +27,20 @@ FilmFlick is a full-stack movie discovery and review platform. Users can explore
 - 🌙 Dark mode and responsive design
 
 ## 📁 Project Structure
-<pre> <code> ``` FilmFlick/ │ ├── client/ # React frontend │ ├── src/ │ └── public/ ├── server/ # Express backend │ ├── routes/ │ ├── controllers/ │ ├── database/ │ └── app.js ├── assets/ # Screenshots or shared images ├── .env ├── .gitignore └── README.md ``` </code> </pre>
+```plaintext
+FilmFlick/
+│
+├── client/ # React frontend
+├── server/ # Node/Express backend
+│ ├── routes/ # Route handlers (movies, user, review, etc.)
+│ ├── controllers/ # Controller logic
+│ ├── middleware/ # Auth, error handling, etc.
+│ ├── database/ # DB connection
+│ ├── models/ # MySQL queries / abstractions
+│ └── app.js # Main entry point
+├── .env
+└── README.md
+---
 
 🖼️ Screenshots
 ### 🔹 Home Page - Following Activity section
