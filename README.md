@@ -40,7 +40,7 @@ FilmFlick/
 │ └── app.js # Main entry point
 ├── .env
 └── README.md
----
+```
 
 🖼️ Screenshots
 ### 🔹 Home Page - Following Activity section
