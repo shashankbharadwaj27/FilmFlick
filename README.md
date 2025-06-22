@@ -36,7 +36,6 @@ FilmFlick/
 │ ├── controllers/ # Controller logic
 │ ├── middleware/ # Auth, error handling, etc.
 │ ├── database/ # DB connection
-│ ├── models/ # MySQL queries / abstractions
 │ └── app.js # Main entry point
 ├── .env
 └── README.md
