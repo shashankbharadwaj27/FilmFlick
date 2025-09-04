@@ -1,0 +1,2869 @@
+movie_id,actor_id,character_name
+1,1,"Andy Dufresne"
+1,3,"Ellis Boyd 'Red' Redding"
+1,4,"Warden Norton"
+1,5,Heywood
+1,6,"Captain Byron T. Hadley"
+1,7,Tommy
+1,8,"Brooks Hatlen"
+1,9,"Bogs Diamond"
+1,10,"1946 D.A."
+1,11,Skeet
+2,12,"Don Vito Corleone"
+2,13,"Michael Corleone"
+2,14,"Sonny Corleone"
+2,15,"Tom Hagen"
+2,16,Clemenza
+2,17,"Kay Adams"
+2,18,"Connie Corleone Rizzi"
+2,19,"Carlo Rizzi"
+2,20,"Captain McCluskey"
+2,21,"Jack Woltz"
+3,13,"Don Michael Corleone"
+3,15,"Tom Hagen"
+3,17,"Kay Corleone"
+3,18,"Constanzia 'Connie' Corleone"
+3,25,"Vito Corleone"
+3,26,"Frederico 'Fredo' Corleone"
+3,28,"Hyman Roth"
+3,29,"Frank Pentangeli"
+3,30,"Senator Pat Geary"
+3,31,"Al Neri"
+4,32,"Oskar Schindler"
+4,33,"Itzhak Stern"
+4,34,"Amon Goeth"
+4,35,"Emilie Schindler"
+4,36,"Poldek Pfefferberg"
+4,37,"Helen Hirsch"
+4,38,"Viktoria Klonowska"
+4,39,"Wilek Chilowicz"
+4,40,"Marcel Goldberg"
+4,41,Ingrid
+5,42,"Juror 1"
+5,43,"Juror 2"
+5,44,"Juror 3"
+5,45,"Juror 4"
+5,46,"Juror 5"
+5,47,"Juror 6"
+5,48,"Juror 7"
+5,49,"Juror 8"
+5,50,"Juror 9"
+5,51,"Juror 10"
+6,52,"Chihiro Ogino / Sen (voice)"
+6,53,"Haku (voice)"
+6,54,"Yubaba / Zeniba (voice)"
+6,55,"Akio Ogino (voice)"
+6,56,"Yuko Ogino (voice)"
+6,57,"Chichiyaku (voice)"
+6,58,"Aniyaku (voice)"
+6,59,"Kamaji (voice)"
+6,60,"Kaonashi (voice)"
+6,61,"Rin (voice)"
+7,3,"Lucius Fox"
+7,62,"Bruce Wayne"
+7,63,Joker
+7,64,"Harvey Dent"
+7,65,Alfred
+7,66,Rachel
+7,67,Gordon
+7,69,Ramirez
+7,70,Wuertz
+7,71,Scarecrow
+8,72,"Simran Singh"
+8,73,"Raj Malhotra"
+8,74,"Chaudhry Baldev Singh"
+8,75,"Lajwanti 'Lajjo' Singh"
+8,76,"Dharamvir Malhotra"
+8,77,"Rajeshwari "Chutki" Singh"
+8,78,"Kuljeet Singh"
+8,79,"Ajit Singh, Kuljeet's Father"
+8,80,"Preeti Singh, Kuljeet's Sister"
+8,81,"Simran's Grandmother"
+9,82,"Paul Edgecomb"
+9,83,"Brutus 'Brutal' Howell"
+9,84,"Jan Edgecomb"
+9,85,"John Coffey"
+9,86,"Warden Hal Moores"
+9,87,"Eduard Delacroix"
+9,88,"Arlen Bitterbuck"
+9,89,"Percy Wetmore"
+9,90,"'Wild Bill' Wharton"
+9,91,"Dean Stanton"
+10,92,"Kim Ki-taek"
+10,93,"Park Dong-ik"
+10,94,Yeon-kyo
+10,95,Ki-woo
+10,96,Ki-jung
+10,97,Moon-gwang
+10,98,Chung-sook
+10,99,Geun-se
+10,100,Da-hye
+10,101,Da-song
+11,102,Frodo
+11,103,Gandalf
+11,104,Aragorn
+11,105,Sam
+11,106,"Gollum / Smeagol"
+11,107,Merry
+11,108,Pippin
+11,109,Denethor
+11,110,Faramir
+11,111,Éowyn
+12,112,"Vincent Vega"
+12,113,"Jules Winnfield"
+12,114,"Mia Wallace"
+12,115,"Butch Coolidge"
+12,116,"Marsellus Wallace"
+12,117,"The Wolf"
+12,118,Lance
+12,119,Pumpkin
+12,120,"Honey Bunny"
+12,121,Fabienne
+13,122,"Taki Tachibana (voice)"
+13,123,"Mitsuha Miyamizu (voice)"
+13,124,"Katsuhiko Teshigawara (voice)"
+13,125,"Sayaka Natori (voice)"
+13,126,"Tsukasa Fujii (voice)"
+13,127,"Shinta Takagi (voice)"
+13,128,"Yotsuha Miyamizu (voice)"
+13,129,"Toshiki Miyamizu (voice)"
+13,130,"Futaha Miyamizu (voice)"
+13,131,"Taki's Father (voice)"
+14,132,Blondie
+14,133,"Tuco Ramirez"
+14,134,"Sentenza / Angel Eyes"
+14,135,"Alcoholic Union Captain"
+14,136,"Father Pablo Ramirez"
+14,137,Maria
+14,138,Storekeeper
+14,139,"Tuco Henchman"
+14,140,"Bill Carson / Jackson"
+14,141,Baker
+15,82,"Forrest Gump"
+15,143,"Jenny Curran"
+15,144,"Lieutenant Dan Taylor"
+15,145,"Mrs. Gump"
+15,146,"Bubba Blue"
+15,147,"Young Forrest Gump"
+15,148,"Young Jenny Curran"
+15,149,"Forrest Junior"
+15,150,"School Bus Driver"
+15,151,"Nurse at Park Bench"
+16,65,"Professor Brand"
+16,152,Cooper
+16,153,Brand
+16,155,Murph
+16,156,Tom
+16,157,Doyle
+16,158,Getty
+16,159,"Murph (10 Yrs.)"
+16,160,"Murph (older)"
+16,161,Donald
+17,25,"James Conway"
+17,163,"Henry Hill"
+17,164,"Tommy DeVito"
+17,165,"Karen Hill"
+17,166,"Paul Cicero"
+17,167,"Frankie Carbone"
+17,168,"Sonny Bunz"
+17,169,Frenchy
+17,170,"Billy Batts"
+17,171,"Morris Kessler"
+18,172,Kikuchiyo
+18,173,"Kambei Shimada"
+18,174,"Gorobei Katayama"
+18,175,Kyuzo
+18,176,"Heihachi Hayashida"
+18,177,Shichiroji
+18,178,"Katsushiro Okamoto"
+18,179,Shino
+18,180,"Rikichi's Wife"
+18,181,"Manzô - Father of Shino"
+19,182,"Seita (voice)"
+19,183,"Setsuko (voice)"
+19,184,"Mother (voice)"
+19,185,"Auntie (voice)"
+19,186,"Woman who takes care of Setsuko (voice)"
+19,187,"Obayashi Chairman (voice)"
+19,188,"Cousin (voice)"
+19,189,"Gosaku (voice)"
+19,190,"Aunt's House Guest (voice)"
+19,191,"Patrolman (voice)"
+20,192,Guido
+20,193,Dora
+20,194,Giosué
+20,195,Zio
+20,196,Ferruccio
+20,197,"Dora's Mother"
+20,198,"Doctor Lessing"
+20,199,"Mrs. Guicciardini"
+20,200,"School Principal"
+20,201,Rodolfo
+42,202,Narrator
+42,203,"Tyler Durden"
+42,204,"Marla Singer"
+42,205,"Robert Paulson"
+42,206,"Angel Face"
+42,207,"Richard Chesler (Regional Manager)"
+42,208,"The Mechanic"
+42,209,Ricky
+42,210,"Intern at Hospital"
+42,211,"Thomas at Remaining Men Together"
+43,212,Alfredo
+43,213,"Salvatore 'Totò' Di Vita (adult)"
+43,214,"Salvatore 'Totò' Di Vita (teen)"
+43,215,"Salvatore 'Totò' Di Vita (child)"
+43,216,"Elena Mendola (teen) / Elena's daughter (in Director's cut)"
+43,217,"Maria Di Vita (young)"
+43,218,"Maria Di Vita (aged)"
+43,219,Spaccafico
+43,220,Anna
+43,221,"Ignazio, usher"
+44,222,Matilde
+44,223,Miguel
+44,224,Eugenia
+44,225,Porfirio
+44,226,Lalo
+44,227,Laura
+44,228,"Manuel Chang"
+44,229,"The singer"
+44,230,Policeman
+44,231,Nestor
+45,174,"Jinai Chijiiwa"
+45,232,"Hanshiro Tsugumo"
+45,233,"Motome Chijiiwa"
+45,234,"Miho Tsugumo"
+45,235,"Hikokuro Omodaka"
+45,236,"Tango Inaba"
+45,237,"Hayato Yazaki"
+45,238,Masakazu
+45,240,Retainer
+45,241,Retainer
+46,242,"Buscapé - Rocket"
+46,243,"Zé Pequeno - Li'l Zé"
+46,244,"Bené - Benny"
+46,245,"Dadinho - Li'l Dice"
+46,246,"Cabeleira - Shaggy"
+46,247,"Sandro Cenoura - Carrot"
+46,248,"Mané Galinha - Knockout Ned"
+46,249,"Alicate - Clipper"
+46,250,Angélica
+46,251,"Barbantinho - Stringy"
+47,102,Frodo
+47,103,Gandalf
+47,104,Aragorn
+47,105,Sam
+47,107,Merry
+47,108,Pippin
+47,256,Bilbo
+47,257,Arwen
+47,258,Saruman
+47,259,Boromir
+48,247,"João Grilo"
+48,263,Chicó
+48,264,"Padre João"
+48,265,Dora
+48,266,Eurico
+48,267,Diabo
+48,268,Rosinha
+48,269,Vicentão
+48,270,"Joaquim Brejeiro"
+48,271,"Jesus Cristo / Emanuel"
+49,42,"Private Det. Milton Arbogast"
+49,272,"Norman Bates"
+49,273,"Marion Crane"
+49,274,"Lila Crane"
+49,275,"Sam Loomis"
+49,277,"Sheriff Al Chambers"
+49,278,"Dr. Fred Richman"
+49,279,"Tom Cassidy"
+49,280,Caroline
+49,281,"George Lowery"
+50,282,"Randle Patrick McMurphy"
+50,283,"Billy Bibbit"
+50,284,"Nurse Mildred Ratched"
+50,285,Martini
+50,286,"Dale Harding"
+50,287,"Orderly Turkle"
+50,288,"Max Taber"
+50,289,"Chief Bromden"
+50,290,"Dr. John Spivey"
+50,291,Ellis
+51,292,"Julianne Mitchell"
+51,293,"Gabriel Emerson"
+51,294,"Tom Mitchell"
+51,295,NULL
+51,296,NULL
+51,297,NULL
+51,298,"Dr. Ling"
+52,102,Frodo
+52,103,Gandalf
+52,104,Aragorn
+52,105,Sam
+52,106,Gollum
+52,107,Merry
+52,111,Éowyn
+52,304,"Gimli / Treebeard (voice)"
+52,305,Legolas
+52,306,Théoden
+53,25,"David 'Noodles' Aaronson"
+53,164,"Frankie Monaldi"
+53,310,"Maximilian 'Max' Bercovicz"
+53,311,"Deborah Gelly"
+53,312,"James Conway O'Donnell"
+53,313,Carol
+53,315,Joe
+53,316,"Patrick 'Patsy' Goldberg"
+53,317,"Philip 'Cockeye' Stein"
+53,318,"'Fat' Moe Gelly"
+54,319,Dong-hoon
+54,320,Mi-hee
+54,321,So-won
+54,322,Gwang-sik
+54,323,"Psychiatrist Jung-sook"
+54,324,"Young-suk's Mother"
+54,325,"Detective Squad Chief"
+54,326,Prosecutor
+54,327,Paramedic
+54,328,"Vice Principal"
+55,329,"Miles Morales (voice)"
+55,330,"Peter B. Parker (voice)"
+55,331,"Gwen Stacy (voice)"
+55,332,"Uncle Aaron (voice)"
+55,333,"Jefferson Davis (voice)"
+55,334,"Aunt May (voice)"
+55,335,"Rio Morales (voice)"
+55,336,"Mary Jane (voice)"
+55,337,"Spider-Ham (voice)"
+55,338,"Peni Parker (voice)"
+56,122,"Markl (voice)"
+56,339,"Sophie (voice)"
+56,340,"Howl (voice)"
+56,341,"Witch of the Waste (voice)"
+56,342,"Calcifer (voice)"
+56,344,"Kosho (voice)"
+56,345,"Prince Justin / Turnip Head (voice)"
+56,346,"King of Ingary (voice)"
+56,347,"Heen (voice)"
+56,348,"Madame Suliman (voice)"
+57,349,"Luke Skywalker"
+57,350,"Han Solo"
+57,351,"Princess Leia"
+57,352,"Lando Calrissian"
+57,353,C-3PO
+57,354,"Darth Vader"
+57,355,Chewbacca
+57,356,R2-D2
+57,357,"Yoda (Voice)"
+57,358,"Obi-Wan Kenobi"
+58,359,"Rumi (voice)"
+58,360,"Mira (voice)"
+58,361,"Zoey (voice)"
+58,362,"Jinu (voice)"
+58,363,"Celine (voice)"
+58,364,"Bobby (voice)"
+58,365,"Gwi-Ma (voice)"
+58,366,"Healer Han / Additional Voices (voice)"
+58,367,"Variety Show Host 1 / Idol Host / Romance Saja (voice)"
+58,368,"Host (voice)"
+59,53,"Shouya Ishida (voice)"
+59,125,"Yuzuru Nishimiya (voice)"
+59,370,"Shouko Nishimiya (voice)"
+59,372,"Tomohiro Nagatsuka (voice)"
+59,373,"Naoka Ueno (voice)"
+59,374,"Miyoko Sahara (voice)"
+59,375,"Miki Kawai (voice)"
+59,376,"Satoshi Mashiba (voice)"
+59,377,"Young Shouya Ishida (voice)"
+59,378,"Young Kazuki Shimada (voice)"
+60,379,"Lucy Shimmers"
+60,380,"James Shimmers"
+60,381,"Edgar Ruiz"
+60,382,"April Shimmers"
+60,383,"Nurse Max"
+60,384,Luther
+60,385,"Isabelle Shimmers"
+60,386,"Nurse Jules"
+60,387,"ER Dr. Nicholas Myrna"
+60,388,"Nurse Daniel"
+61,389,"Władysław 'Władek' Szpilman"
+61,390,"Captain Wilm Hosenfeld"
+61,391,Father
+61,392,Mother
+61,393,Dorota
+61,394,"Henryk Szpilman"
+61,395,"Regina Szpilman"
+61,396,"Halina Szpilman"
+61,397,Jurek
+61,398,"SS Slapping Father"
+62,3,Somerset
+62,203,Mills
+62,401,Tracy
+62,402,"Officer Davis"
+62,403,"Dr. O'Neill"
+62,404,"Dr. Santiago"
+62,405,"Police Captain"
+62,406,"Detective Taylor at First Murder"
+62,407,"Dead Man at 1st Crime Scene"
+62,408,"Workman at Door of Somerset's Office"
+63,409,Andrew
+63,410,Fletcher
+63,411,Jim
+63,412,Nicole
+63,413,Ryan
+63,414,Carl
+63,415,"Uncle Frank"
+63,416,"Mr. Kramer"
+63,417,"Aunt Emma"
+63,418,"Dorm Neighbor"
+64,292,"Julia Mitchell"
+64,293,"Gabriel Emerson"
+64,296,"Christa Peterson"
+64,421,"Simon Talbot"
+64,422,"Paul Norris"
+64,424,Antonio
+64,425,"Rachel Clark"
+65,292,"Julia Mitchell"
+65,293,"Gabriel Emerson"
+65,295,Paulina
+65,296,"Christa Peterson"
+65,297,"Professor Jeremy Martin"
+65,422,"Paul Norris"
+65,431,"Professor Tara Chakravartty"
+65,432,Soraya
+65,433,"Professor Robert Mwangi"
+66,71,"Robert Fischer, Jr."
+66,435,"Dom Cobb"
+66,436,Arthur
+66,437,Saito
+66,438,Eames
+66,439,Ariadne
+66,440,Yusuf
+66,442,"Peter Browning"
+66,443,"Mal Cobb"
+66,444,"Maurice Fischer"
+67,445,Sergio
+67,446,Chucho
+67,447,Paloma
+67,448,Lupe
+67,449,Nico
+67,450,"Papa Paloma"
+67,451,Chepe
+67,452,Enrique
+67,453,Jaime
+67,454,Maria
+68,455,"L.B. 'Jeff' Jefferies"
+68,456,"Lisa Fremont"
+68,457,"Det. Lt. Thomas J. Doyle"
+68,458,Stella
+68,459,"Lars Thorwald"
+68,460,"Miss Lonelyhearts"
+68,461,Songwriter
+68,462,"Miss Torso"
+68,463,"Woman on Fire Escape"
+68,464,"Man on Fire Escape"
+69,465,"Clarice Starling"
+69,466,"Dr. Hannibal Lecter"
+69,467,"Jack Crawford"
+69,468,"Jame Gumb"
+69,469,"Dr. Frederick Chilton"
+69,470,"Catherine Martin"
+69,471,"Senator Ruth Martin"
+69,472,"Ardelia Mapp"
+69,473,Barney
+69,474,Lamar
+70,329,"Miles Morales (voice)"
+70,330,"Peter B. Parker (voice)"
+70,331,"Gwen Stacy (voice)"
+70,333,"Jeff Morales (voice)"
+70,335,"Rio Morales (voice)"
+70,480,"Miguel O'Hara (voice)"
+70,481,"Spot (voice)"
+70,482,"Jessica Drew (voice)"
+70,483,"Hobie Brown (voice)"
+70,484,"Pavitr Prabhakar (voice)"
+71,172,"Kingo Gondo"
+71,173,"Chief of Investigation Section"
+71,178,"Detective Arai"
+71,232,"Chief Detective Tokura"
+71,487,"Reiko Gondo"
+71,488,"Kawanishi, Gondo's secretary"
+71,490,"Chief Detective 'Bos'n' Taguchi"
+71,491,"Detective Nakao"
+71,493,"Kamiya, National Shoes Publicity Director"
+71,494,"Ishimaru, National Shoes Design Department Director"
+72,495,"Luo Xiaohei / Nezha (voice)"
+72,496,"Wuxian (voice)"
+72,497,"Fengxi (voice)"
+72,498,"Luozhu (voice)"
+72,499,"Xuhuai (voice)"
+72,500,"Tianhu (voice)"
+72,501,"Jiulao (voice)"
+72,502,"Ruoshui (voice)"
+72,503,"Guild Master (voice)"
+72,504,"Flower Spirit (voice)"
+73,202,Derek
+73,506,Danny
+73,507,Doris
+73,508,Davina
+73,509,Seth
+73,510,Stacey
+73,511,Sweeney
+73,512,Murray
+73,513,Cameron
+73,514,Dennis
+74,515,"Fuutarou Uesugi (voice)"
+74,516,"Ichika Nakano (voice)"
+74,517,"Nino Nakano (voice)"
+74,518,"Miku Nakano (voice)"
+74,519,"Yotsuba Nakano (voice)"
+74,520,"Itsuki Nakano (voice)"
+74,521,"Raiha Uesugi (voice)"
+74,522,"Isanari Uesugi (voice)"
+75,523,"Rihito Sajo (voice)"
+75,524,"Hikaru Kusakabe (voice)"
+75,525,"Manabu Hara (voice)"
+75,526,"Mikipon (voice)"
+76,57,"Gonza (voice)"
+76,341,"Mrs. Moro (voice)"
+76,527,"Ashitaka (voice)"
+76,528,"San / Kaya (voice)"
+76,529,"Eboshi Gozen (voice)"
+76,530,"Jikobo (voice)"
+76,531,"Kouroku (voice)"
+76,534,"Mrs. Hii (voice)"
+76,535,"Chief of Affairs (voice)"
+76,536,"Toki (voice)"
+77,288,"Emmett Brown"
+77,537,"Marty McFly"
+77,539,"George McFly"
+77,540,"Lorraine Baines"
+77,541,"Jennifer Parker"
+77,542,"Biff Tannen"
+77,543,"Dave McFly"
+77,544,"Linda McFly"
+77,545,"Sam Baines"
+77,546,"Stella Baines"
+78,547,"Tsuneo Suzukawa (voice)"
+78,548,"Kumiko 'Josee' Yamamura (voice)"
+78,549,"Mai Ninomiya (voice)"
+78,550,"Hayato Matsuura (voice)"
+78,551,"Kana Kishimoto (voice)"
+78,552,"Chizu Yamamura (voice)"
+78,553,"Professor Kondo (voice)"
+78,554,"Nishida (voice)"
+78,555,"Mizushima (voice)"
+78,556,"Fujita (voice)"
+79,557,"Xiao Si'r"
+79,558,Ming
+79,559,Father
+79,560,Mother
+79,561,"Eldest Sister"
+79,562,"Elder Brother"
+79,563,"Middle Sister"
+79,564,"Youngest Sister"
+79,565,Ma
+79,566,Cat
+80,116,"Thunderbolt (voice)"
+80,349,"Thorn (voice)"
+80,567,"Roz / Rummage (voice)"
+80,568,"Fink (voice)"
+80,569,"Brightbill (voice)"
+80,570,"Longneck (voice)"
+80,571,"Vontra (voice)"
+80,572,"Paddler (voice)"
+80,575,"Pinktail (voice)"
+80,576,"Baby Brightbill (voice)"
+81,577,"Mima Kirigoe (voice)"
+81,578,"Rumi (voice)"
+81,579,"Rei (voice)"
+81,580,"Mamoru Uchida (voice)"
+81,581,"Tadokoro (voice)"
+81,582,"Yukiko (voice)"
+81,583,"Tejima (voice)"
+81,584,"Takao Shibuya (voice)"
+81,585,"Sakuragi (voice)"
+81,586,"Eri Ochiai (voice)"
+82,173,"Kanji Watanabe"
+82,176,Noguchi
+82,181,"Sub-Section Chief Ono"
+82,588,Sakai
+82,589,"Mitsuo, son of Kanji"
+82,590,Ohara
+82,591,Toyo
+82,592,Kimura
+82,594,"Subordinate Clerk Saito"
+82,596,"Kiichi Watanabe, Kanji's Brother"
+83,597,"John Keating"
+83,598,"Neil Perry"
+83,599,"Todd Anderson"
+83,600,"Knox Overstreet"
+83,601,"Charlie Dalton"
+83,602,"Richard Cameron"
+83,603,"Steven Meeks"
+83,604,"Gerard Pitts"
+83,605,"Mr. Nolan"
+83,606,"Mr. Perry"
+84,67,"Norman Stansfield"
+84,607,"Léon Montana"
+84,608,"Mathilda Lando"
+84,610,Tony
+84,611,Malky
+84,612,"Mathilda's Father"
+84,613,"Mathilda's Mother"
+84,614,"Mathilda's Sister"
+84,615,"Mathilda's Brother"
+84,616,"Bodyguard Chief"
+85,617,"Capitán Guerrero"
+85,618,"Josefo "El Aguijón" Urías"
+85,619,Tanque
+85,620,Pollo
+85,621,Toro
+85,622,Combo
+85,623,Lucía
+85,624,"Román "El Sacristán" Urías"
+85,625,"La Cobra"
+85,626,Karla
+86,374,"Violet Evergarden (voice)"
+86,628,"Gilbert Bougainvillea (voice)"
+86,629,"Claudia Hodgins (voice)"
+86,630,"Dietfried Bougainvillea (voice)"
+86,631,"Iris Cannary (voice)"
+86,632,"Benedict Blue (voice)"
+86,633,"Cattleya Baudelaire (voice)"
+86,634,"Erica Brown (voice)"
+86,635,"Ulysses (voice)"
+86,636,"Luca (voice)"
+87,637,"Joe Gillis"
+87,638,"Norma Desmond"
+87,639,"Max von Mayerling"
+87,640,"Betty Schaefer"
+87,641,Sheldrake
+87,642,Morino
+87,643,"Artie Green"
+87,644,Undertaker
+87,645,"1st Finance Man"
+87,646,"2nd Finance Man"
+88,647,"Adenoid Hynkel, Dictator of Tomania / A Jewish Barber"
+88,648,Hannah
+88,649,"Benzino Napaloni, Dictator of Bacteria"
+88,650,"Commander Schultz"
+88,651,Garbitsch
+88,652,"Field Marshal Herring"
+88,653,"Madame Napaloni"
+88,654,Spook
+88,655,"Mr. Jaeckel"
+88,656,"Mrs. Jaeckel"
+89,445,Nixon
+89,657,Ariel
+89,658,Felicia
+89,659,Néstor
+89,660,Ortega
+89,661,Victoria
+89,663,NULL
+89,664,NULL
+89,665,NULL
+89,666,NULL
+90,667,Antonio
+90,668,"Gianni Perego"
+90,669,"Luciana Zanon"
+90,670,"Nicola Palumbo"
+90,671,Elide
+90,672,"Romolo Catenacci"
+90,673,Gabriella
+90,674,"Anna Catenacci, Romolo's wife"
+90,675,Maria
+90,676,Palumbo
+91,49,Frank
+91,677,Jill
+91,679,'Cheyenne'
+91,680,'Harmonica'
+91,681,Morton
+91,682,Sam
+91,683,"Frank's Gunman"
+91,684,"Frank's Gunman"
+91,685,Sheriff
+91,686,"Brett McBain"
+92,687,"Akihiko Kaji (voice)"
+92,688,"Haruki Nakayama (voice)"
+92,689,"Mafuyu Satou (voice)"
+92,690,"Ritsuka Uenoyama (voice)"
+92,691,"Ugetsu Murata (voice)"
+93,647,"The Tramp (A Factory Worker)"
+93,648,"A Gamin"
+93,694,"Cafe Proprietor"
+93,695,"Big Bill"
+93,696,Mechanic
+93,697,Burglar
+93,698,"Gamin's Father"
+93,699,"President of the Electro Steel Corp."
+93,700,"Prison Cellmate"
+93,701,Minister
+94,519,"Hotaru Takegawa (voice)"
+94,581,"Hotaru's Grandfather (voice)"
+94,632,"Gin (voice)"
+94,702,"Hotaru's Mother (voice)"
+94,703,"Ryouta (voice)"
+94,707,"Shadow (voice)"
+94,708,"Tree Hand (voice)"
+94,709,"Masked Child (voice)"
+94,710,"Lion (voice)"
+94,711,"Festival Child (voice)"
+95,712,"Mickey Mouse (voice)"
+95,713,"Minnie Mouse (voice)"
+95,714,"Donald Duck (voice)"
+95,715,"Goofy / Pluto (voice)"
+95,716,"Baloo / Winnie-the-Pooh (voice)"
+95,717,"Moana (voice)"
+95,718,"Anna (voice)"
+95,719,"Tiana (voice)"
+95,720,"Flash (voice)"
+95,721,"Eeyore / Merlin (voice)"
+96,455,"George Bailey"
+96,723,"Mary Hatch"
+96,724,"Mr. Potter"
+96,725,"Uncle Billy"
+96,726,Clarence
+96,727,"Mrs. Bailey"
+96,728,Ernie
+96,729,Bert
+96,730,Violet
+96,731,"Mr. Gower"
+97,732,Philippe
+97,733,Driss
+97,734,Yvonne
+97,735,Magalie
+97,736,"La DRH société de courses"
+97,737,Marcelle
+97,738,Elisa
+97,739,Adama
+97,740,Fatou
+97,741,Mina
+98,12,"Colonel Walter Kurtz"
+98,15,"Lieutenant Colonel Bill Kilgore"
+98,30,"General Corman"
+98,350,Colonel
+98,742,"Captain Benjamin Willard"
+98,744,"Jay 'Chef' Hicks"
+98,745,"Chief Phillips"
+98,746,"Tyrone 'Clean' Miller"
+98,747,"Lance B. Johnson"
+98,751,"Jerry, Civilian"
+99,629,"Shigeru Aoba (voice)"
+99,752,"Shinji Ikari (voice)"
+99,753,"Rei Ayanami / Yui Ikari (voice)"
+99,754,"Misato Katsuragi (voice)"
+99,755,"Asuka Langley Soryu (voice)"
+99,756,"Gendo Ikari (voice)"
+99,757,"Maya Ibuki (voice)"
+99,759,"Makoto Hyouga (voice)"
+99,760,"Ritsuko Akagi (voice)"
+99,761,"Kozo Fuyutsuki (voice)"
+100,647,"A Tramp"
+100,694,"Mayor / Blind Girl's Downstairs Neighbor (uncredited)"
+100,697,"A Prizefighter"
+100,699,"His Butler"
+100,763,"A Blind Girl"
+100,764,"Her Grandmother"
+100,765,"An Eccentric Millionaire"
+100,768,"Street Sweeper / Burglar (uncredited)"
+100,769,"Boxing Fight Referee (uncredited)"
+100,771,"Bald Party Guest (uncredited)"
+101,772,"Col. Dax"
+101,773,"Cpl. Philippe Paris"
+101,774,"Gen. George Broulard"
+101,775,"Gen. Paul Mireau"
+101,776,"Lt. Roget/Singing man"
+101,777,"Maj. Saint-Auban"
+101,778,"Pvt. Pierre Arnaud"
+101,779,"German Singer"
+101,780,"Proprietor of Cafe"
+101,781,"Narrator of Opening Sequence"
+102,782,Memo
+102,783,Ova
+102,784,Askorozlu
+102,785,Yusuf
+102,786,Hafız
+102,787,"Yarbay Aydın"
+102,788,"Müdür Nail"
+102,789,"Öğretmen Mine"
+102,790,"Yüzbaşı Faruk"
+102,791,Ali
+103,792,"Simba (voice)"
+103,793,"Nala (voice)"
+103,794,"Timon (voice)"
+103,795,"Pumbaa (voice)"
+103,796,"Mufasa (voice)"
+103,797,"Scar (voice)"
+103,798,"Rafiki (voice)"
+103,799,"Zazu (voice)"
+103,800,"Young Simba (voice)"
+103,801,"Young Nala (voice)"
+104,802,"Geo Cassine"
+104,803,"Roland Darban"
+104,804,"Manu Borelli"
+104,805,"Vossellin / Monseigneur"
+104,806,"Claude Gaspard"
+104,807,"Le lieutenant Grinval"
+104,808,"Le directeur de la prison"
+104,809,Bouboule
+104,810,"Un gardien"
+104,811,"Un gardien"
+105,812,"Oh Dae-Su"
+105,813,"Lee Woo-jin"
+105,814,Mi-do
+105,815,"Mr. Han"
+105,816,"No Joo-hwan"
+105,817,"Park Cheol-woong"
+105,818,Hypnotist
+105,819,"Lee Soo-ah"
+105,820,"Young Dae-su"
+105,821,"Young Woo-jin"
+106,127,"Sakuta Azusagawa (voice)"
+106,520,"Shoko Makinohara (voice)"
+106,690,"Yuma Kunimi (voice)"
+106,823,"Mai Sakurajima (voice)"
+106,825,"Tomoe Koga (voice)"
+106,826,"Rio Futaba (voice)"
+106,827,"Nodoka Toyohama (voice)"
+106,828,"Kaede Azusagawa (voice)"
+106,830,"Fumika Nanjo (voice)"
+106,831,"Ryoko Hanawa (voice)"
+107,119,"Danny Boodmann T.D. Lemon Nineteen Hundred '1900'"
+107,833,"Max Tooney"
+107,834,"The Girl"
+107,835,"Danny Boodmann"
+107,836,Farmer
+107,837,"Jelly Roll Morton"
+107,838,"'Pops', the Shopkeeper"
+107,839,"Harbor Master"
+107,840,"Mexican Stoker"
+107,841,"Neapolitan Stoker"
+108,842,"Zach Sobiech"
+108,843,Sammy
+108,844,Amy
+108,845,"Laura Sobiech"
+108,846,"Rob Sobiech"
+108,847,"Mr. Weaver"
+108,848,"Grace Sobiech"
+108,849,Alli
+108,850,Sam
+108,851,"Jason Mraz"
+109,551,"Sakura Yamauchi (voice)"
+109,690,"Takahiro (voice)"
+109,852,"Haruki Shiga (voice)"
+109,854,"Kyoko Takimoto (voice)"
+109,856,"Issei Miyata (voice)"
+109,857,"Haruki's Mother (voice)"
+109,858,"Haruki's Father (voice)"
+109,859,"Sakura's Mother (voice)"
+109,860,"Hospital Announcement (voice)"
+109,861,"Father of the Boy and Girl (voice)"
+110,862,Daryn
+110,863,Isabelle
+110,864,Xavier
+110,865,Phil
+110,866,Sammy
+110,867,Kiran
+110,868,"James Maxwell"
+110,869,Ron
+110,870,Catherine
+110,871,Amanda
+111,872,Self
+111,873,Self
+111,874,Self
+111,875,Self
+111,876,Self
+111,877,Self
+111,878,Self
+111,879,Self
+111,880,Self
+111,881,Self
+112,882,"Tony Stark / Iron Man"
+112,883,"Steve Rogers / Captain America"
+112,884,"Bruce Banner / Hulk"
+112,885,Thor
+112,886,"Natasha Romanoff / Black Widow"
+112,887,"Clint Barton / Hawkeye"
+112,888,Thanos
+112,889,"James Rhodes / War Machine"
+112,890,"Scott Lang / Ant-Man"
+112,891,"Doctor Strange"
+113,882,"Tony Stark / Iron Man"
+113,883,"Steve Rogers / Captain America"
+113,884,"Bruce Banner / Hulk"
+113,885,Thor
+113,886,"Natasha Romanoff / Black Widow"
+113,888,Thanos
+113,889,"James Rhodes / War Machine"
+113,891,"Doctor Strange"
+113,900,"Peter Parker / Spider-Man"
+113,901,"T'Challa / Black Panther"
+114,410,"Klaus (voice)"
+114,481,"Jesper (voice)"
+114,904,"Alva (voice)"
+114,905,"Mrs. Krum (voice)"
+114,906,"Mogens (voice)"
+114,907,"Mr. Ellingboe (voice)"
+114,908,"Pumpkin / Olaf (voice)"
+114,909,"Ellingboe Girl 3 (voice)"
+114,910,"Margu (voice)"
+114,911,"Ellingboe Girl (voice)"
+115,912,NULL
+115,913,NULL
+115,914,Samantha
+115,915,NULL
+115,916,"Jenny Infante"
+115,917,NULL
+115,918,NULL
+115,919,NULL
+115,920,NULL
+115,921,NULL
+116,922,"Stella Grant"
+116,923,"Will Newman"
+116,924,"Poe Ramírez"
+116,925,Barbara
+116,926,"Dr. Noor Hamid"
+116,927,"Meredith Newman"
+116,928,"Erin Grant"
+116,929,"Tom Grant"
+116,930,"Abby Grant"
+116,931,Julie
+117,746,Morpheus
+117,932,Neo
+117,934,Trinity
+117,935,"Agent Smith"
+117,936,Oracle
+117,937,Cypher
+117,938,Tank
+117,939,Apoc
+117,940,Mouse
+117,941,Switch
+118,942,"Flyora Gayshun"
+118,943,Glasha
+118,944,Kosach
+118,945,Rubezh
+118,946,Obersturmführer
+118,947,Sturmbannführer
+118,948,"Village Headman"
+118,949,Gezhel
+118,950,"Chief of Staff of the Partisan Detachment"
+118,951,"Medical NCO"
+119,668,"Bruno Cortona"
+119,953,"Roberto Mariani"
+119,954,"Lilli Cortona"
+119,955,"Danilo Borelli 'Bibi'"
+119,956,"Gianna Cortona"
+119,957,"Zia Lidia"
+119,958,"Moglie del commendatore"
+119,959,"Zia Enrica"
+119,960,"Bikini girl with leg cast"
+119,961,"Clara, la ragazza alla stazione"
+120,104,"Tony Lip"
+120,332,"Dr. Don Shirley"
+120,964,Dolores
+120,965,"Johnny Venere"
+120,966,Oleg
+120,967,"Record Exec"
+120,968,George
+120,969,"Gio Loscudo"
+120,970,"Copa Coat Check Girl"
+120,971,"Bobby Rydell"
+121,972,"Diane 'Die' Després"
+121,973,Kyla
+121,974,"Steve O'Connor Després"
+121,975,Paul
+121,976,Patrick
+121,977,"Director of Correctional Center"
+121,978,Marthe
+121,979,Natacha
+121,980,"Kyla's Daughter"
+121,981,"Taxi Driver"
+122,982,Maximus
+122,983,Commodus
+122,984,Lucilla
+122,985,Proximo
+122,986,"Marcus Aurelius"
+122,987,Gracchus
+122,988,Juba
+122,989,Falco
+122,990,Gaius
+122,991,Quintus
+123,753,"Sohei's Mother (voice)"
+123,992,"Yuki (voice)"
+123,993,"Ame (voice)"
+123,994,"Hana (voice)"
+123,995,"Wolf Man (voice)"
+123,996,"Yuki as a Child (voice)"
+123,997,"Ame as a Child (voice)"
+123,998,"Sohei (voice)"
+123,1000,"Hosokawa (voice)"
+123,1001,"Yamaoka (voice)"
+124,82,"Captain Miller"
+124,91,"Private Jackson"
+124,1003,"Sergeant Horvath"
+124,1004,"Private Reiben"
+124,1006,"Private Mellish"
+124,1007,"Private Caparzo"
+124,1008,"T/4 Medic Wade"
+124,1009,"Corporal Upham"
+124,1010,"Private Ryan"
+124,1011,"Captain Hamill"
+125,1012,"John Constantine (voice)"
+125,1013,"Clark Kent / Superman (voice)"
+125,1014,"Rachel Roth / Raven (voice)"
+125,1015,"Bruce Wayne / Batman (voice)"
+125,1016,"Diana Prince / Wonder Woman (voice)"
+125,1017,"Damian Wayne / Robin (voice)"
+125,1018,"Lois Lane (voice)"
+125,1019,"Lex Luthor (voice)"
+125,1020,"Darkseid (voice)"
+125,1021,"Victor Stone / Cyborg (voice)"
+126,1022,"Entomologist Niki Jumpei"
+126,1023,"The Woman"
+126,1024,"Entomologist's Wife"
+126,1025,"Village Elder"
+127,203,"LT. Aldo Raine"
+127,1027,Shosanna
+127,1028,"COL. Hans Landa"
+127,1029,"SGT. Donny Donowitz"
+127,1030,"LT. Archie Hicox"
+127,1031,"Bridget von Hammersmark"
+127,1032,"Fredrick Zoller"
+127,1033,"SGT. Hugo Stiglitz"
+127,1034,"CPL. Wilhelm Wicki"
+127,1035,Marcel
+128,259,"Robyn's Father, Bill Goodfellowe (voice)"
+128,1036,"Robyn Goodfellowe (voice)"
+128,1037,"Mebh Óg MacTíre (voice)"
+128,1039,"Lord Protector (voice)"
+128,1040,"Sean Óg (voice)"
+128,1041,"Mebh's Mother, Moll MacTíre (voice)"
+128,1042,"Stringy Woodcutter, Ned (voice)"
+128,1043,"Stumpy Woodcutter (voice)"
+128,1044,"Head Housekeeper, Bridget (voice)"
+128,1045,"Street Children Ringleader, Padraig (voice)"
+129,337,"Jack Horner (voice)"
+129,1046,"Puss in Boots (voice)"
+129,1047,"Kitty Softpaws (voice)"
+129,1048,"Perrito (voice)"
+129,1049,"Wolf (voice)"
+129,1050,"Goldilocks (voice)"
+129,1051,"Mama Bear (voice)"
+129,1052,"Papa Bear (voice)"
+129,1053,"Baby Bear (voice)"
+129,1055,"Mama Luna (voice)"
+130,651,Mayhew
+130,1056,"Leonard Vole"
+130,1057,Christine
+130,1058,"Sir Wilfrid"
+130,1059,"Miss Plimsoll"
+130,1060,Brogan-Moore
+130,1062,Carter
+130,1063,"Mr. Myers"
+130,1064,"Mrs. French"
+130,1065,Janet
+131,1066,"The Boy (voice)"
+131,1067,"The Mole (voice)"
+131,1068,"The Fox (voice)"
+131,1069,"The Horse (voice)"
+132,1070,"Michael Jackson"
+132,1071,"Michael's Girlfriend"
+132,1072,"Narrator (voice)"
+132,1073,"Zombie (uncredited)"
+132,1074,"Zombie (uncredited)"
+132,1075,"Dancer (uncredited)"
+132,1076,"Man in Movie Theater (uncredited)"
+132,1077,"Zombie (uncredited)"
+132,1078,"Zombie Opening the Crypt (uncredited)"
+132,1079,"Zombie (uncredited)"
+133,872,Self
+133,876,"Self - Bass, Keyboard Bass"
+133,878,"Self - Background Vocalist"
+133,879,"Self - Background Vocalist Dance Captain"
+133,880,"Self - Drums"
+133,881,"Self - Co-Band Leader, Guitar, Keyboards"
+133,1081,"Self - Co-Band Leader, Guitar, Keyboards"
+133,1083,"Self - Guitar"
+133,1086,"Self - Keyboards"
+133,1087,"Self - Background Vocalist Section Leader"
+134,282,"Jack Torrance"
+134,287,Hallorann
+134,778,Lloyd
+134,1091,"Wendy Torrance"
+134,1092,Danny
+134,1094,Ullman
+134,1095,Grady
+134,1097,Doctor
+134,1098,Durkin
+134,1099,"Young Woman in Bath"
+135,370,"Shinobu Kocho (voice)"
+135,515,"Inosuke Hashibira (voice)"
+135,522,"Kyojuro Rengoku (voice)"
+135,1100,"Tanjiro Kamado (voice)"
+135,1101,"Nezuko Kamado (voice)"
+135,1102,"Zenitsu Agatsuma (voice)"
+135,1105,"Giyu Tomioka (voice)"
+135,1106,"Tengen Uzui (voice)"
+135,1108,"Obanai Iguro (voice)"
+135,1109,"Sanemi Shinazugawa (voice)"
+136,577,"Hikari Horaki (voice)"
+136,752,"Shinji Ikari (voice)"
+136,753,"Rei Ayanami / Yui Ikari (voice)"
+136,754,"Misato Katsuragi (voice)"
+136,755,"Asuka Shikinami Langley (voice)"
+136,757,"Maya Ibuki (voice)"
+136,760,"Ritsuko Akagi (voice)"
+136,1109,"Toji Suzuhara (voice)"
+136,1112,"Mari Illustrious Makinami (voice)"
+136,1117,"Kensuke Aida (voice)"
+137,1120,"Ken Sato / Ultraman (voice)"
+137,1121,"Professor Sato / Ultradad (voice)"
+137,1122,"Mina / Emiko Sato (voice)"
+137,1123,"Dr. Onda (voice)"
+137,1124,"Ami Wakita (voice)"
+137,1125,"Game Commentator (voice)"
+137,1126,"Announcer / Additional Voices (voice)"
+137,1127,"Itow-san / Additional Voices (voice)"
+137,1128,"Kubo-san (voice)"
+137,1129,"Coach Shimura / Additional Voices (voice)"
+138,155,"Celia Foote"
+138,1130,"Skeeter Phelan"
+138,1131,"Aibileen Clark"
+138,1132,"Hilly Holbrook"
+138,1133,"Minny Jackson"
+138,1135,"Elizabeth Leefolt"
+138,1136,"Charlotte Phelan"
+138,1137,"Jolene French"
+138,1138,"Mae Mobley"
+138,1139,"Mae Mobley"
+139,349,"Luke Skywalker"
+139,350,"Han Solo"
+139,351,"Princess Leia Organa"
+139,353,C-3PO
+139,354,"Darth Vader (performer)"
+139,355,Chewbacca
+139,356,R2-D2
+139,358,"Obi-Wan "Ben" Kenobi"
+139,796,"Darth Vader (voice) (uncredited)"
+139,1143,"Grand Moff Tarkin"
+140,62,"Alfred Borden"
+140,65,Cutter
+140,106,Alley
+140,886,"Olivia Wenscombe"
+140,1150,"Robert Angier"
+140,1153,"Julia McCullough"
+140,1154,Sarah
+140,1156,Jess
+140,1157,Tesla
+140,1159,Judge
+141,1160,"Miguel Rivera (voice)"
+141,1161,"Héctor (voice)"
+141,1162,"Ernesto de la Cruz (voice)"
+141,1163,"Mamá Imelda (voice)"
+141,1164,"Abuelita (voice)"
+141,1165,"Papá (voice)"
+141,1166,"Papá Julio (voice)"
+141,1167,"Tío Oscar / Tío Felipe (voice)"
+141,1168,"Clerk (voice)"
+141,1169,"Plaza Mariachi / Gustavo (voice)"
+142,323,"Ms. Sasaki"
+142,1170,"Lady Hideko"
+142,1171,Sook-hee
+142,1172,"Count Fujiwara"
+142,1173,"Uncle Kouzuki"
+142,1175,"Hideko's Aunt"
+142,1176,Bok-soon
+142,1177,Kkeut-dan
+142,1178,Goo-gai
+142,1179,"Young Hideko"
+143,33,"Dr. Cawley"
+143,435,"Teddy Daniels"
+143,468,Warden
+143,884,"Chuck Aule"
+143,1183,"Dr. Naehring"
+143,1184,Dolores
+143,1185,"Rachel 1"
+143,1186,"Rachel 2"
+143,1187,"George Noyce"
+143,1189,"Deputy Warden McPherson"
+144,1190,"Dona Hermínia"
+144,1191,Marcelina
+144,1192,Juliano
+144,1193,"Carlos Alberto"
+144,1194,Waldeia
+144,1195,Iesa
+144,1196,"Lúcia Helena"
+144,1197,"Dona Lourdes"
+144,1198,Ana
+144,1199,Sol
+145,1200,"C.C. Baxter"
+145,1201,"Fran Kubelik"
+145,1202,"Jeff D. Sheldrake"
+145,1203,"Joe Dobisch"
+145,1204,"Dr. Dreyfuss"
+145,1205,"Al Kirkeby"
+145,1206,"Mrs. Margie MacDougall"
+145,1207,Sylvia
+145,1208,"Mrs. Mildred Dreyfuss"
+145,1209,"Karl Matuschka"
+146,1210,"Enzo (voice)"
+146,1211,"Denny Swift"
+146,1212,"Avery "Eve" Swift"
+146,1213,"Zoë Swift"
+146,1214,"17-Year-Old Zoë"
+146,1215,Mike
+146,1216,Maxwell
+146,1217,Trish
+146,1218,"Mark Finn"
+146,1219,Tony
+147,935,"Tom Doss"
+147,1220,"Desmond T. Doss"
+147,1221,"Captain Glover"
+147,1222,"Sgt Howell"
+147,1223,"Dorothy Schuttle"
+147,1224,"Smitty Ryker"
+147,1226,"Bertha Doss"
+147,1227,"Lieutenant Manville"
+147,1228,"Colonel Stelzer"
+147,1229,"Andy 'Ghoul' Walker"
+148,1230,"The Doctor (11)"
+148,1231,"The Doctor (10)"
+148,1232,"The War Doctor"
+148,1233,"Clara Oswald"
+148,1234,"The Moment"
+148,1235,"The Doctor (1) (archive footage)"
+148,1236,"The Doctor (2) (archive footage)"
+148,1237,"The Doctor (3) (archive footage)"
+148,1238,"The Doctor (4)/ The Curator"
+148,1239,"The Doctor (5) (archive footage)"
+149,1240,Alex
+149,1241,"Mr. Alexander"
+149,1242,"Dr. Brodsky"
+149,1243,"Chief Guard"
+149,1244,Dim
+149,1245,Georgie
+149,1246,Pete
+149,1247,Catlady
+149,1248,"Mrs. Alexander"
+149,1249,Mum
+150,113,Stephen
+150,435,"Calvin J. Candie"
+150,1028,"Dr. King Schultz"
+150,1250,"Django Freeman"
+150,1253,"Broomhilda von Shaft"
+150,1255,"Billy Crash"
+150,1256,"Leonide Moguy"
+150,1257,"Butch Pooch / Ace Speck"
+150,1258,"Mr. Stonesipher"
+150,1259,Cora
+151,53,"Ariel (voice)"
+151,636,"Mido (voice)"
+151,1260,"Maquia (voice)"
+151,1262,"Ariel as a Child (voice)"
+151,1263,"Leilia (voice)"
+151,1264,"Krim (voice)"
+151,1265,"Lang (voice)"
+151,1267,"Dita (voice)"
+151,1268,"Racine (voice)"
+151,1269,"Izor (voice)"
+152,1270,Antonio
+152,1271,Bruno
+152,1272,Maria
+152,1273,Baiocco
+152,1274,"Alfredo Catelli, The Thief"
+152,1275,"The Beggar"
+152,1276,"The Charitable Lady"
+152,1277,"A Beggar"
+152,1278,"Secretary of the Charity Organization"
+152,1279,NULL
+153,1183,"Antonius Block"
+153,1280,Jöns
+153,1281,Death
+153,1282,Jof
+153,1284,Mia
+153,1285,Lisa
+153,1286,Witch
+153,1287,Karin
+153,1288,"Mute Girl"
+153,1289,Raval
+154,934,Natalie
+154,937,Teddy
+154,1290,Leonard
+154,1293,Burt
+154,1294,Waiter
+154,1295,"Leonard's Wife"
+154,1296,Sammy
+154,1297,"Mrs. Jankis"
+154,1298,Doctor
+154,1299,Dodd
+155,1300,Dottore
+155,1301,"Augusta Terzi"
+155,1302,"Police Prefect"
+155,1303,Biglia
+155,1304,"Antonio Pace"
+155,1305,Mangani
+155,1306,"Nicola Panunzio"
+155,1307,"Augusta's Husband"
+155,1308,Governess
+155,1309,Canes
+156,1310,"Na Bo-ra"
+156,1311,"Poong Woon-ho"
+156,1312,"Baek Hyun-jin"
+156,1313,"Kim Yeon-du"
+156,1314,"Bo-ra's Mother"
+156,1315,"Bo-ra's Father"
+156,1316,Madam
+156,1317,"Darn It"
+156,1318,Dong-wook
+156,1319,"Adult Na Bo-ra"
+157,444,Kobayashi
+157,1069,Keaton
+157,1320,McManus
+157,1322,Fenster
+157,1323,Hockney
+157,1324,Verbal
+157,1325,"Dave Kujan"
+157,1327,"Edie Finneran"
+157,1328,"Jack Baer"
+157,1329,"Jeff Rabin"
+158,1330,"Steven Universe (voice)"
+158,1331,"Pearl / Yellow Pearl (voice)"
+158,1332,"Garnet (voice)"
+158,1333,"Amethyst (voice)"
+158,1334,"Spinel (voice)"
+158,1335,"Greg Universe (voice)"
+158,1336,"Bismuth (voice)"
+158,1337,"Peridot (voice)"
+158,1338,"Lapis Lazuli (voice)"
+158,1339,"Yellow Diamond (voice)"
+159,409,"Lt. Bradley 'Rooster' Bradshaw"
+159,1340,"Capt. Pete 'Maverick' Mitchell"
+159,1341,"Adm. Tom 'Iceman' Kazansky"
+159,1343,"Penny Benjamin"
+159,1344,"Wo-1. Bernie 'Hondo' Coleman"
+159,1345,"Adm. Beau 'Cyclone' Simpson"
+159,1346,"Adm. Solomon 'Warlock' Bates"
+159,1347,"Lt. Natasha 'Phoenix' Trace"
+159,1348,"Lt. Robert 'Bob' Floyd"
+159,1349,"Lt. Reuben 'Payback' Fitch"
+160,487,"Kyoko Hirayama"
+160,494,"Kurazo Kaneko"
+160,1350,"Shukichi Hirayama"
+160,1351,"Tomi Hirayama"
+160,1352,"Noriko Hirayama"
+160,1353,"Shige Kaneko"
+160,1354,"Koichi Hirayama"
+160,1355,"Fumiko Hirayama"
+160,1357,Numata
+160,1359,"Keizo Hirayama"
+161,256,Ash
+161,1232,Kane
+161,1360,Dallas
+161,1361,Ripley
+161,1362,Lambert
+161,1363,Brett
+161,1366,Parker
+161,1367,Alien
+161,1368,"Mother (voice)"
+162,13,"Tony Montana"
+162,1370,"Manny Ray"
+162,1371,Elvira
+162,1372,Gina
+162,1373,"Frank Lopez"
+162,1374,"Mama Montana"
+162,1375,Omar
+162,1376,"Alejandro Sosa"
+162,1377,Bernstein
+162,1378,"Chi Chi"
+163,455,"Det. John 'Scottie' Ferguson"
+163,1380,"Madeleine Elster / Judy Barton"
+163,1381,"Marjorie 'Midge' Wood"
+163,1382,"Gavin Elster"
+163,1383,Coroner
+163,1384,"Scottie's Doctor"
+163,1385,"Manager of McKittrick Hotel"
+163,1386,"Pop Leibel"
+163,1387,"Car Owner Mistaken for Madeleine"
+163,1388,"Diner at Ernie's (uncredited)"
+164,282,Costello
+164,435,Billy
+164,742,Queenan
+164,1010,Colin
+164,1052,"Mr. French"
+164,1392,Dignam
+164,1395,Madolyn
+164,1396,Brown
+164,1397,Ellerby
+164,1398,"Cousin Sean"
+165,1399,Chava
+165,1400,"Cristina Maria"
+165,1401,Kella
+165,1402,"Uncle Beto"
+165,1403,Ancha
+165,1404,"Mama Toya"
+165,1405,Priest
+165,1406,Chofer
+165,1407,Fito
+165,1408,Chele
+166,1409,"Kang In-ho"
+166,1410,"Seo Yoo-jin"
+166,1411,"Kim Yeon-doo"
+166,1412,"Jin Yoo-ri"
+166,1413,"Jeon Min-soo"
+166,1414,"Principal / Principal's Brother"
+166,1415,"Yoon Ja-ae"
+166,1416,"Park Bo-hyeon"
+166,1417,Young-hoon
+166,1418,"Attorney Hwang"
+168,156,"Morgan O'Mally"
+168,597,"Sean Maguire"
+168,1010,"Will Hunting"
+168,1421,"Chuckie Sullivan"
+168,1422,"Gerald Lambeau"
+168,1423,Skylar
+168,1425,"Billy McBride"
+168,1426,"MIT Student"
+168,1427,Tom
+168,1428,Krystyn
+169,1429,"Rick Blaine"
+169,1430,"Ilsa Lund"
+169,1431,"Victor Laszlo"
+169,1432,"Captain Louis Renault"
+169,1433,"Major Heinrich Strasser"
+169,1434,"Signor Ferrari"
+169,1435,Ugarte
+169,1436,Carl
+169,1437,Yvonne
+169,1438,Sam
+170,1439,Zain
+170,1440,Rahil
+170,1441,Yonas
+170,1442,Souad
+170,1443,Selim
+170,1444,Sahar
+170,1445,Aspro
+170,1446,"The Judge"
+170,1447,Nadine
+170,1448,Assaad
+172,647,"A Tramp"
+172,694,"Professor Guido / Night Shelter Keeper (uncredited)"
+172,768,"Car Thief / Man in Shelter (uncredited)"
+172,1450,"The Kid"
+172,1451,"The Man"
+172,1452,"The Woman"
+172,1454,"Bride (uncredited)"
+172,1455,"Slum Nurse (uncredited)"
+172,1457,"Orphan Asylum Driver (uncredited)"
+172,1458,"Assistant (uncredited)"
+173,127,"Tenya Iida (voice)"
+173,519,"Ochako Uraraka (voice)"
+173,1264,"Shoto Todoroki (voice)"
+173,1459,"Izuku Midoriya (voice)"
+173,1460,"Katsuki Bakugo (voice)"
+173,1461,"Nine (voice)"
+173,1462,"Slice (voice)"
+173,1463,"Katsuma (voice)"
+173,1464,"Mahoro (voice)"
+173,1468,"Eijiro Kirishima (voice)"
+174,1280,"Herr Vogler"
+174,1284,Alma
+174,1470,"Elisabet Vogler"
+174,1471,"The Doctor"
+174,1473,"Elisabet's Son (uncredited)"
+175,1474,"Truman Burbank"
+175,1475,"Meryl Burbank / Hannah Gill"
+175,1476,"Marlon / Louis Coltrane"
+175,1477,"Lauren Garland / Sylvia"
+175,1478,"Angela Montclair / Alanis Montclair"
+175,1479,Christof
+175,1480,Simeon
+175,1481,"Walter Moore / Kirk Burbank"
+175,1482,Lawrence
+175,1483,"Young Truman"
+176,1388,"Audience Member (uncredited)"
+176,1484,"Don Lockwood"
+176,1485,"Cosmo Brown"
+176,1486,"Kathy Selden"
+176,1487,"Lina Lamont"
+176,1488,"R.F. Simpson"
+176,1489,Dancer
+176,1490,"Roscoe Dexter"
+176,1491,"Zelda Zanders"
+176,1492,"Hairdresser (uncredited)"
+177,247,"Isaías Paiva"
+177,1494,"Isadora "Dora" Teixeira"
+177,1495,"Josué Fontenele de Paiva"
+177,1496,Irene
+177,1497,César
+177,1498,Pedrão
+177,1500,"Moisés Paiva"
+177,1501,Yolanda
+177,1502,Waitress
+177,1503,"Dora's Client"
+178,1504,"Eddie Palmer"
+178,1505,Sam
+178,1506,Shelly
+178,1507,"Maggie Hayes"
+178,1508,"Vivian Palmer"
+178,1509,Jerry
+178,1510,"Lucille Coles"
+178,1511,"Tommy Coles"
+178,1512,"Judge Ellen Antheem"
+178,1513,Jake
+179,1514,"Leonhard Seppala"
+179,1515,"Constance Seppala"
+179,1516,"George Maynard"
+179,1517,"Dr. Curtis Welch"
+179,1518,"Bill Clark"
+179,1519,"Sally Burdett"
+179,1520,Amituk
+179,1521,Atiqtalik
+179,1522,"Dan Murphy"
+179,1523,"Charlie Olsen"
+180,212,"Il Perozzi"
+180,1524,"Raffaello Mascetti"
+180,1525,"Rambaldo Melandri"
+180,1527,"Il Necchi"
+180,1528,"Il Professor Sassaroli"
+180,1529,"Righi Niccolò"
+180,1530,"Bruna, l'amante del Perozzi"
+180,1531,"Alice Mascetti"
+180,1532,Carmen
+180,1533,"Donatella Sassaroli"
+181,126,"Yuno (voice)"
+181,1268,"Princia Funnybunny (voice)"
+181,1534,"Asta (voice)"
+181,1536,"Yami Sukehiro (voice)"
+181,1537,"Noelle Silva (voice)"
+181,1538,"Conrad Leto (voice)"
+181,1539,"Julius Novachrono (voice)"
+181,1540,"Edward Avalaché (voice)"
+181,1542,"Jester Garandros (voice)"
+181,1543,"Millie Maxwell (voice)"
+182,25,"Travis Bickle"
+182,117,Sport
+182,465,Iris
+182,1546,Betsy
+182,1548,Wizard
+182,1549,"Charles Palantine"
+182,1550,Tom
+182,1551,"Concession Girl"
+182,1552,"Angry Black Man"
+182,1553,Melio
+183,888,"Gurney Halleck"
+183,1050,"Princess Irulan"
+183,1554,"Paul Atreides"
+183,1555,Chani
+183,1556,Jessica
+183,1557,Stilgar
+183,1559,Feyd-Rautha
+183,1561,"Beast Rabban"
+183,1562,Emperor
+183,1563,"Lady Margot Fenring"
+184,677,Claudia
+184,1437,"Madeleine, the French Actress"
+184,1564,"Guido Anselmi"
+184,1565,"Luisa Anselmi"
+184,1566,Carla
+184,1568,Rossella
+184,1569,"Gloria Morin"
+184,1571,"Mysterious Lady"
+184,1572,"La Saraghina"
+184,1573,"Pace, the Producer"
+185,125,"Taylor Bartlett (voice)"
+185,374,"Violet Evergarden (voice)"
+185,629,"Claudia Hodgins (voice)"
+185,631,"Iris Cannary (voice)"
+185,632,"Benedict Blue (voice)"
+185,633,"Cattleya Baudelaire (voice)"
+185,634,"Erica Brown (voice)"
+185,1575,"Amy Bartlett / Isabella York (voice)"
+185,1582,"Luculia Marlborough (voice)"
+185,1583,"Ashley Lancaster (voice)"
+186,25,"Murray Franklin"
+186,983,"Arthur Fleck"
+186,1586,"Sophie Dumond"
+186,1587,"Penny Fleck"
+186,1588,"Thomas Wayne"
+186,1589,"Detective Burke"
+186,1590,"Detective Garrity"
+186,1591,Randall
+186,1592,Gary
+186,1593,"Hoyt Vaughn"
+187,1162,Paco
+187,1594,Miklo
+187,1595,Cruz
+187,1597,Montana
+187,1598,"Magic Mike"
+187,1599,Bonafide
+187,1600,"Red Ryder"
+187,1601,Popeye
+187,1602,Wallace
+187,1603,Chuey
+188,506,"John Connor"
+188,1604,"The Terminator"
+188,1605,"Sarah Connor"
+188,1607,T-1000
+188,1608,"Dr. Silberman"
+188,1609,"Miles Dyson"
+188,1610,"Tarissa Dyson"
+188,1611,"Enrique Salceda"
+188,1612,Tim
+188,1613,"Janelle Voight"
+189,20,"Brigadier General Jack D. Ripper"
+189,685,"Colonel Bat Guano"
+189,796,"Lt. Lothar Zogg"
+189,1614,"Group Capt. Lionel Mandrake / President Merkin Muffley / Dr. Strangelove"
+189,1615,"General "Buck" Turgidson"
+189,1618,"Major "King" Kong"
+189,1619,"Botschafter De Sadesky"
+189,1621,"Miss Scott"
+189,1622,"Mr. Staines"
+189,1623,"Lt. Dietrich"
+190,172,"Dr. Kyojio Niide ("Red Beard")"
+190,487,"Madwoman ("The Mantis")"
+190,1625,"Dr. Noboru Yasumoto"
+190,1626,Sahachi
+190,1627,Osugi
+190,1628,Onaka
+190,1630,"Genzô Tsugawa"
+190,1631,Otoyo
+190,1632,Okuni
+190,1633,Chobo
+191,405,"Gny. Sgt. Hartman"
+191,1634,"Pvt. Joker"
+191,1635,"Animal Mother"
+191,1636,"Pvt. Pyle"
+191,1638,Eightball
+191,1639,Rafterman
+191,1640,"Pvt. Cowboy"
+191,1641,"Lt. Touchdown"
+191,1642,"Lt. Lockhart"
+191,1643,"Crazy Earl"
+192,516,"Rika Orimoto (voice)"
+192,632,"Toge Inumaki (voice)"
+192,752,"Yuta Okkotsu (voice)"
+192,1105,"Suguru Geto (voice)"
+192,1109,"Panda (voice)"
+192,1646,"Satoru Gojo (voice)"
+192,1648,"Maki Zen'in (voice)"
+192,1651,"Kiyotaka Ijichi (voice)"
+192,1652,"Masamichi Yaga (voice)"
+192,1653,"Mimiko Hasaba (voice)"
+193,455,"Alfred Kralik"
+193,1654,"Klara Novak"
+193,1656,"Hugo Matuschek"
+193,1657,"Ferencz Vadas"
+193,1658,Flora
+193,1659,Pirovitch
+193,1660,"Pepi Katona"
+193,1661,Ilona
+193,1662,"Woman Customer"
+193,1663,Doctor
+194,1664,Delia
+194,1665,Ivano
+194,1666,Marcella
+194,1667,Marisa
+194,1668,"Sor Ottorino"
+194,1669,Nino
+194,1670,Orietta
+194,1671,Giulio
+194,1672,Alvaro
+194,1673,"Sora Franca"
+195,1674,"Chen Nian"
+195,1675,"Xiao Bei"
+195,1676,"Zheng Ye"
+195,1677,"Lao Yang"
+195,1678,"Chen Nian's Mother"
+195,1679,"Wei Lai"
+195,1680,"Xu Miao"
+195,1681,"Da Kang"
+195,1682,"Li Xiang"
+195,1683,"Hu Xiaodie"
+196,117,"Mr. White / Larry Dimmick"
+196,119,"Mr. Orange / Freddy Newandyke"
+196,1686,"Mr. Blonde / Vic Vega"
+196,1687,""Nice Guy" Eddie Cabot"
+196,1688,"Mr. Pink"
+196,1689,"Joe Cabot"
+196,1690,"Detective Holdaway"
+196,1691,"Officer Marvin Nash"
+196,1692,"Mr. Blue"
+196,1693,"Mr. Brown"
+197,1694,Marianne
+197,1695,Héloïse
+197,1696,Sophie
+197,1697,"La Comtesse"
+197,1698,"La faiseuse d'ange"
+197,1699,"L'élève atelier"
+197,1700,"L'homme salon"
+197,1701,"Le batelier"
+198,1702,Auggie
+198,1703,Isabel
+198,1704,Nate
+198,1705,Via
+198,1706,"Jack Will"
+198,1707,Summer
+198,1708,Julian
+198,1709,"Mr. Tushman"
+198,1710,Miranda
+198,1711,"Mr. Browne"
+199,1712,"Stalker's Wife"
+199,1713,Stalker
+199,1714,Writer
+199,1715,Professor
+199,1716,Marta
+199,1717,"Writer's Companion"
+199,1718,"Lyuger, Owner of Cafe"
+199,1719,"Police Patrol"
+199,1720,"Professor's Telephone Interlocutor (voice) (uncredited)"
+200,1721,Aldo
+200,1722,Giacomo
+200,1723,Giovanni
+200,1724,Marina
+201,1725,"Xiao Qing (voice)"
+201,1726,"Masked Man (voice)"
+201,1727,"Sima (voice)"
+201,1728,"牛头帮主 (voice)"
+201,1729,宝青坊主(voice)
+201,1730,"老狐狸宝青坊主 (voice)"
+201,1731,"Fa Hai (voice)"
+201,1732,孙姐(voice)
+201,1733,(voice)
+201,1734,(voice)
+202,797,Alfred
+202,1421,"Batman / Bruce Wayne"
+202,1514,Vulko
+202,1736,"Superman / Clark Kent"
+202,1737,"Wonder Woman / Diana Prince"
+202,1738,"Cyborg / Victor Stone"
+202,1739,"Aquaman / Arthur Curry"
+202,1740,"The Flash / Barry Allen"
+202,1741,"Steppenwolf (voice)"
+202,1742,"Lois Lane"
+203,1554,Elio
+203,1745,Oliver
+203,1747,"Mr. Perlman"
+203,1748,Annella
+203,1749,Marzia
+203,1750,Chiara
+203,1751,Mafalda
+203,1752,Anchise
+203,1753,Bambi
+203,1754,Nico
+204,1755,"Big Chris"
+204,1756,Tom
+204,1757,Soap
+204,1758,Eddy
+204,1759,Bacon
+204,1760,Winston
+204,1761,J
+204,1762,Charles
+204,1763,Willie
+204,1764,"Barry the Baptist"
+205,466,Anthony
+205,1051,Anne
+205,1767,"The Man"
+205,1768,"The Woman"
+205,1769,Laura
+205,1770,Paul
+205,1771,"Dr. Sarai"
+205,1772,Boy
+206,1202,"Walter Neff"
+206,1774,"Phyllis Dietrichson"
+206,1775,"Barton Keyes"
+206,1776,"Mr. Jackson"
+206,1777,"Lola Dietrichson"
+206,1778,"Mr. Dietrichson"
+206,1779,"Nino Zachetti"
+206,1780,"Edward S. Norton Jr."
+206,1781,"Sam Garlopis"
+206,1782,"Joe Pete"
+207,1280,Evald
+207,1284,Sara
+207,1783,"Professor Isak Borg"
+207,1785,Marianne
+207,1787,Agda
+207,1788,Anders
+207,1789,Viktor
+207,1790,"Isak's Mother"
+207,1791,"Mrs. Alman"
+207,1792,"Karin, Isak's Wife"
+208,250,"Counselor Jerry (voice)"
+208,1250,"Joe Gardner (voice)"
+208,1794,"22 (voice)"
+208,1795,"Moonwind (voice)"
+208,1796,"Terry (voice)"
+208,1798,"Counselor Jerry (voice)"
+208,1799,"Libba Gardner (voice)"
+208,1800,"Dez (voice)"
+208,1801,"Curly (voice)"
+208,1802,"Dorothea (voice)"
+209,1363,Travis
+209,1804,Jane
+209,1805,Walt
+209,1806,Hunter
+209,1807,Anne
+209,1808,"Doctor Ulmer"
+209,1809,"Gas Station Attendant"
+209,1810,"Car Rental Clerk"
+209,1811,"Woman on TV"
+209,1812,Carmelita
+210,1361,"Ship's Computer (voice)"
+210,1813,"WALL·E / M-O (voice)"
+210,1814,"EVE (voice)"
+210,1815,"Captain (voice)"
+210,1816,"Shelby Forthright, BnL CEO"
+210,1817,"John (voice)"
+210,1818,"Mary (voice)"
+210,1820,"Additional Voices (voice)"
+210,1821,"Additional Voices (voice)"
+210,1822,"Additional Voices (voice)"
+211,1823,"Su Li-zhen"
+211,1824,"Chow Mo Wan"
+211,1825,"Mrs. Suen"
+211,1826,"Mr. Ho"
+211,1827,"Ah Ping"
+211,1828,Amah
+211,1829,"Man Living in Mr. Koo's Apartment"
+211,1830,"Mrs. Koo"
+211,1831,"Mr. Koo"
+211,1832,"Mr. Chan (voice)"
+212,1131,"Nancy Birch"
+212,1150,"Keller Dover"
+212,1834,"Detective Loki"
+212,1836,"Grace Dover"
+212,1837,"Franklin Birch"
+212,1838,"Holly Jones"
+212,1839,"Alex Jones"
+212,1840,"Ralph Dover"
+212,1841,"Eliza Birch"
+212,1842,"Anna Dover"
+213,1284,Katarina
+213,1288,Eva
+213,1470,Marianne
+213,1844,Johan
+213,1846,Peter
+213,1848,Modern
+213,1849,Arne
+213,1850,"Mrs. Palm"
+213,1851,"Young Eva"
+213,1852,Karin
+214,668,"Peppe il pantera"
+214,677,Carmelina
+214,1564,Tiberio
+214,1854,"Mario Angeletti"
+214,1855,Cosimo
+214,1856,Norma
+214,1857,Nicoletta
+214,1860,"Dante Cruciani"
+214,1861,Capannelle
+214,1862,"Michele Ferribotte"
+215,1863,"Freder Fredersen"
+215,1864,"Maria / The Machine Man"
+215,1865,"Johann 'Joh' Fredersen"
+215,1866,"C.A. Rotwang"
+215,1867,Josaphat
+215,1868,"The Thin Man"
+215,1869,"No. 11811 - Georgy"
+215,1870,Grot
+215,1871,"Creative Human - Man Who Convinces Babel (uncredited)"
+215,1872,"Working Woman (uncredited)"
+216,1873,"Li Yunxiang (voice)"
+216,1874,"Masked Guy (voice)"
+216,1875,"Long Wang (voice)"
+216,1876,"Dr. Su Junzhu (voice)"
+216,1877,"Kasha (voice)"
+216,1878,"Third Prince (voice)"
+216,1879,"Father (voice)"
+216,1880,"Father (voice)"
+216,1881,"Li Yunxiang's Bother (voice)"
+216,1882,"Donghai Yaksa (voice)"
+217,1883,Lucas
+217,1884,Theo
+217,1885,Klara
+217,1886,Marcus
+217,1887,Grethe
+217,1888,Agnes
+217,1889,Bruun
+217,1890,Nadja
+217,1891,Torsten
+217,1892,"Lars T"
+218,668,"Giovanni Busacca"
+218,1529,"Capitano Castelli"
+218,1894,"Oreste Jacovacci"
+218,1895,Costantina
+218,1896,Bordin
+218,1898,"Tenente Gallina"
+218,1899,"Maggiore Venturi"
+218,1900,Giardino
+218,1901,"Sottotenente Lorenzi"
+218,1902,Mandich
+219,487,Anju
+219,1903,Tamaki
+219,1904,Zushiô
+219,1906,"Sanshô dayû"
+219,1907,"Minister of Justice"
+219,1908,Kichiji
+219,1909,Kohagi
+219,1910,Ubatake
+219,1911,Priestess
+219,1912,"Prime Minister Fujiwara"
+220,1200,"Jerry (Daphne)"
+220,1207,"Sweet Sue"
+220,1913,"Joe (Josephine)"
+220,1915,"Sugar Kane Kowalczyk"
+220,1916,"Spats Colombo"
+220,1917,"Detective Mulligan"
+220,1918,"Osgood Fielding III"
+220,1919,"Little Bonaparte"
+220,1921,"Sig Poliakoff"
+220,1922,"Toothpick Charlie"
+221,1923,Nawal
+221,1924,"Jeanne Marwan"
+221,1925,"Simon Marwan"
+221,1926,"Notary Lebel"
+221,1927,"Notaire Maddad"
+221,1928,"Abou Tarek"
+221,1929,"Professor Niv Cohen"
+221,1930,"Doctor in the Emergency Room"
+221,1931,"Bassem Marwan"
+221,1932,"Professor Said Haidar"
+222,482,"April Ofrah"
+222,843,"Hailey Grant"
+222,1933,"Starr Carter"
+222,1934,"Lisa Carter"
+222,1935,"Maverick Carter"
+222,1936,"Chris Bryant"
+222,1937,"Uncle Carlos"
+222,1938,King
+222,1939,"Khalil Harris"
+222,1940,"Seven Carter"
+223,172,"Sanjuro Kuwabatake / The Samurai"
+223,173,"Tokuemon, sake brewer"
+223,177,Inokichi
+223,232,"Unosuke, gunfighter"
+223,1357,"Gonji, Tavern Keeper"
+223,1945,Nui
+223,1946,Orin
+223,1948,"Seibê - brothel operator"
+223,1950,Yoichiro
+223,1951,"Kohei's Son"
+224,1953,"Marinette (voice)"
+224,1954,"Adrien (voice)"
+224,1955,"Gabriel (voice)"
+224,1956,"Jessica (voice)"
+224,1957,"Sparrow (voice)"
+224,1958,"Aeon (voice)"
+224,1959,"Mike (voice)"
+224,1960,"Alya (voice)"
+224,1961,"Nino / Kim (voice)"
+224,1962,"Tikki / Sabrina / Alix (voice)"
+225,1129,"Shang Tsung / Lin Kuei Assasin (voice)"
+225,1963,"Hanzo Hasashi / Scorpion (voice)"
+225,1964,"Liu Kang (voice)"
+225,1965,"Sonya Blade (voice)"
+225,1966,"Johnny Cage (voice)"
+225,1967,"Jax Briggs (voice)"
+225,1968,"Sub-Zero (voice)"
+225,1970,"Quan Chi (voice)"
+225,1971,"Kano / Shinnok (voice)"
+225,1972,"Satoshi Hasashi / Kitana (voice)"
+226,102,Patrick
+226,884,Stan
+226,1474,"Joel Barish"
+226,1974,"Clementine Kruczynski"
+226,1975,Mary
+226,1978,"Dr. Mierzwiak"
+226,1979,Carrie
+226,1980,Rob
+226,1981,Hollis
+226,1982,Frank
+227,1983,"The Princess Kaguya (voice)"
+227,1984,"Sanuki no Miyatsuko (voice)"
+227,1985,"Ōna / Narrator (voice)"
+227,1986,"Sutemaru (voice)"
+227,1987,"Lady Sagami (voice)"
+227,1988,"Menowarawa (voice)"
+227,1989,"Lord Inbe no Akita (voice)"
+227,1990,"Prince Ishitsukuri (voice)"
+227,1991,"Minister of the Right Abe (voice)"
+227,1992,"Grand Counselor Otomo (voice)"
+228,1993,"Nicola Carati"
+228,1994,"Matteo Carati"
+228,1995,"Adriana Carati"
+228,1996,"Giulia Monfalco"
+228,1997,"Carlo Tommasi"
+228,1998,"Mirella Utano"
+228,1999,"Francesca Carati"
+228,2000,"Giorgia Esposti"
+228,2001,"Angelo Carati"
+228,2002,"Giovanna Carati"
+229,2003,"Adrián Doria"
+229,2004,Elvira
+229,2005,"Tomás Garrido"
+229,2006,"Laura Vidal"
+229,2007,"Félix Leiva"
+229,2008,Driver
+229,2009,Bruno
+229,2010,"Daniel Garrido"
+229,2011,Sonia
+229,2012,"Police Inspector Millán"
+230,2013,"Claire Reine, dite Garance"
+230,2014,"Baptiste Debureau"
+230,2015,"Frédérick Lemaître"
+230,2016,"Pierre-François Lacenaire"
+230,2017,Nathalie
+230,2018,"Édouard comte de Montray"
+230,2019,Jericho
+230,2020,"Mme Hermine"
+230,2021,"Fil de Soie"
+230,2022,Avril
+231,2023,"Captain Lieutenant 'Der Alte'"
+231,2024,"Lieutenant Werner"
+231,2025,"Chief Engineer"
+231,2026,"First Watch Officer"
+231,2027,"Second Watch Officer"
+231,2028,Kriechbaum
+231,2029,"Johann 'Das Gespenst'"
+231,2030,Ullmann
+231,2031,Hinrich
+231,2032,"Chief Bosun"
+232,34,"Lord Voldemort"
+232,204,"Bellatrix Lestrange"
+232,1741,"Aberforth Dumbledore"
+232,2033,"Harry Potter"
+232,2034,"Hermione Granger"
+232,2035,"Ron Weasley"
+232,2037,"Severus Snape"
+232,2038,"Albus Dumbledore"
+232,2039,"Griphook / Filius Flitwick"
+232,2042,"Neville Longbottom"
+233,2043,Vinz
+233,2044,Hubert
+233,2045,Saïd
+233,2046,Abdel
+233,2047,Santo
+233,2048,"Ordinary Man"
+233,2049,Sarah
+233,2050,"Vinz's Grandmother"
+233,2051,"Vinz's Aunt"
+233,2052,Cook
+235,458,"Birdie Coonan"
+235,1915,"Miss Caswell"
+235,2053,"Margo Channing"
+235,2054,"Eve Harrington"
+235,2055,"Addison DeWitt"
+235,2056,"Karen Richards"
+235,2057,"Bill Sampson"
+235,2058,"Lloyd Richards"
+235,2060,"Max Fabian"
+235,2062,Phoebe
+236,1741,"Fletcher Hamilton"
+236,1839,"Paul Sunday / Eli Sunday"
+236,2063,"Daniel Plainview"
+236,2065,Henry
+236,2067,"H.W. Plainview"
+236,2068,Elizabeth
+236,2069,"Mary Sunday"
+236,2070,"H. B. Ailman"
+236,2071,"Abel Sunday"
+236,2072,"Mr. Bandy"
+237,2073,"Cassie Salazar"
+237,2074,"Luke Marrow"
+237,2075,Toby
+237,2076,Frankie
+237,2077,Johnno
+237,2078,"Jacob Marrow"
+237,2079,Nora
+237,2080,Armando
+237,2081,"Jacob Marrow Jr"
+237,2082,Mila
+238,1435,"Hans Beckert"
+238,1867,"Inspector Groeber"
+238,2084,"Frau Beckmann"
+238,2085,"Elsie Beckmann"
+238,2086,"Inspector Karl Lohmann"
+238,2088,Schränker
+238,2089,Franz
+238,2090,"The Cheater"
+238,2091,"Pickpocket with Six Watches"
+238,2092,Bauernfänger
+239,1172,Gang-rim
+239,2094,"Hae Won-maek"
+239,2095,Deok-choon
+239,2096,"Sung-ju / Household God"
+239,2097,"Kim Su-hong"
+239,2098,"King Yeomra"
+239,2099,Prosecutor
+239,2100,Prosecutor
+239,2101,"Heo Choon-sam"
+239,2102,"Heo Hyun-dong"
+240,536,"Yasuko Kusakabe (voice)"
+240,2103,"Satsuki Kusakabe (voice)"
+240,2104,"Mei Kusakabe (voice)"
+240,2105,"Totoro (voice)"
+240,2106,"Tatsuo Kusakabe (voice)"
+240,2108,"Granny (voice)"
+240,2109,"Kanta Ogaki (voice)"
+240,2110,"Kanta's Mother (voice)"
+240,2111,"Kanta's Father (voice)"
+240,2112,"Kanta's Aunt (voice)"
+241,2113,MacReady
+241,2114,Childs
+241,2115,Blair
+241,2116,Nauls
+241,2117,Palmer
+241,2118,"Dr. Copper"
+241,2119,Norris
+241,2120,Bennings
+241,2121,Clark
+241,2122,Garry
+242,817,Prosecutor
+242,1172,Gang-rim
+242,2094,"Hae Won-maek"
+242,2095,Deok-choon
+242,2097,"Kim Su-hong"
+242,2098,"King Yeomra"
+242,2100,Prosecutor
+242,2124,"Kim Ja-hong"
+242,2129,"Ja-hong's Mother"
+242,2132,"Young Kim Ja-hong"
+243,1564,"Marcello Rubini"
+243,1565,Maddalena
+243,2134,Sylvia
+243,2136,Emma
+243,2137,Fanny
+243,2138,Steiner
+243,2139,"Marcello's father"
+243,2140,Paparazzo
+243,2141,Paola
+243,2142,Riccardo
+244,2143,"Xu Fugui"
+244,2144,"Xu Jiazhen"
+244,2145,"Town Chief"
+244,2146,Chunsheng
+244,2147,"Wan Erxi"
+244,2148,Long'er
+244,2149,"Xu Fengxia"
+244,2150,"Young Fengxia"
+244,2151,"Xu Youqing"
+244,2152,"Fugui's Dad"
+245,2153,"Dr. David Bowman"
+245,2154,"Dr. Frank Poole"
+245,2155,"Dr. Heywood Floyd"
+245,2156,"HAL 9000 (voice)"
+245,2157,Moonwatcher
+245,2158,"Dr. Andrei Smyslov"
+245,2159,Elena
+245,2160,"Dr. Ralph Halvorsen"
+245,2161,"Dr. Roy Michaels"
+245,2162,"Mission Controller (voice)"
+246,90,"Jason Dixon"
+246,2163,"Mildred Hayes"
+246,2164,"Bill Willoughby"
+246,2166,"Robbie Hayes"
+246,2167,"Anne Willoughby"
+246,2168,"Red Welby"
+246,2169,James
+246,2170,"Charlie Hayes"
+246,2171,Penelope
+246,2172,"Cedric Connolly"
+247,1361,"Mary Griffith"
+247,2173,"Bobby Griffith"
+247,2175,"Robert Griffith"
+247,2176,"Reverend Whitsell"
+247,2177,"Ed Griffith"
+247,2178,"Joy Griffith"
+247,2179,"Nancy Griffith"
+247,2180,David
+247,2181,Jeanette
+247,2182,"Betty Lambert"
+248,92,"Detective Park Doo-man"
+248,2184,"Detective Seo Tae-yoon"
+248,2185,"Detective Cho Yong-koo"
+248,2186,"Sergeant Shin Dong-chul"
+248,2187,"Sergeant Koo Hee-bong"
+248,2188,"Officer Kwon Kwi-ok"
+248,2189,"Jo Byung-soon"
+248,2190,"Baek Kwang-ho"
+248,2191,"Park Hyeon-gyu"
+248,2192,"Kwok Seol-yung"
+249,2193,"Elizabeth Bennet"
+249,2194,"Mr. Darcy"
+249,2195,"Mrs. Bennet"
+249,2196,"Jane Bennet"
+249,2197,"Kitty Bennet"
+249,2198,"Lydia Bennet"
+249,2199,"Mary Bennet"
+249,2200,"Mr. Bennet"
+249,2201,"Mr. Bingley"
+249,2202,"Lady Catherine de Bourgh"
+250,2203,"Hannah Montgomery"
+250,2204,"Gloria Mitchell"
+250,2205,Trent
+250,2206,"Clarity June "CJ" Mitchell"
+250,2207,"Ethan Montgomery"
+250,2208,"Bailey / Molly / Big Dog / Max (voice)"
+250,2209,"Young CJ"
+250,2210,"Toddler CJ"
+250,2211,"Young Trent"
+250,2212,Shane
+251,1049,"Capitão Nascimento"
+251,1500,Neto
+251,2214,"André Matias"
+251,2216,"Capitao Fabio"
+251,2217,Maria
+251,2218,Rosane
+251,2219,Baiano
+251,2220,Marcinho
+251,2221,"Coronel Otávio"
+251,2222,Rose
+252,856,"Kazuma Satou (voice)"
+252,1263,"Lalatina 'Darkness' Dustiness Ford (voice)"
+252,2224,"Megumin (voice)"
+252,2225,"Aqua (voice)"
+252,2227,"Wiz (voice)"
+252,2228,"Yunyun (voice)"
+252,2229,"Sylvia (voice)"
+252,2230,"Hyoizaburo (voice)"
+252,2231,"Yuiyui (voice)"
+252,2232,"Komekko (voice)"
+253,2233,"Projectionist / Sherlock, Jr."
+253,2234,Girl
+253,2235,"Girl's Father / Man on Film Screen"
+253,2236,"Hired Man / Butler"
+253,2237,"Sheik / Villain"
+253,2238,"Girl Who Loses Dollar Outside Cinema (uncredited)"
+253,2239,"Candy Store Girl (uncredited)"
+253,2240,"Conspirator (uncredited)"
+253,2241,"Conspirator (uncredited)"
+253,2242,"Conspirator (uncredited)"
+254,172,Tajômaru
+254,173,Woodcutter
+254,176,Priest
+254,177,Policeman
+254,2244,Masako
+254,2246,Takehiro
+254,2248,Commoner
+254,2249,Medium
+255,2251,"Lisa McVey"
+255,2252,"Sgt. Larry Pinkerton"
+255,2253,"Bobby Joe Long"
+255,2254,Lorrie
+255,2255,"Det. Wolf"
+255,2256,Morris
+255,2257,Betty
+255,2258,"Portly Man"
+255,2259,Ed
+255,2260,"Diane Martin"
+256,71,"J. Robert Oppenheimer"
+256,156,"Boris Pash"
+256,882,"Lewis Strauss"
+256,1010,"Leslie Groves"
+256,1050,"Jean Tatlock"
+256,2262,"Kitty Oppenheimer"
+256,2266,"Ernest Lawrence"
+256,2268,"David Hill"
+256,2269,"Niels Bohr"
+256,2270,"Edward Teller"
+257,332,"Jim Johnson"
+257,1133,"Dorothy Vaughan"
+257,1210,"Al Harrison"
+257,1975,"Vivian Mitchell"
+257,2271,"Katherine G. Johnson"
+257,2273,"Mary Jackson"
+257,2276,"Paul Stafford"
+257,2278,"John Glenn"
+257,2279,"Joylette Johnson"
+257,2280,"Constance Johnson"
+258,232,"Lord Hidetora Ichimonji"
+258,240,"Shuri Kurogane"
+258,2282,"Taro Takatora Ichimonji"
+258,2283,"Jiro Masatora Ichimonji"
+258,2284,"Saburo Naotora Ichimonji"
+258,2285,"Lady Kaede"
+258,2286,"Lady Sue"
+258,2287,Tsurumaru
+258,2289,Kyoami
+258,2290,"Tango Hirayama"
+259,1564,Gabriele
+259,2291,"Antonietta Taberi"
+259,2293,"Emanuele Taberi"
+259,2294,Concierge
+259,2295,"Romana Taberi"
+259,2296,"Arnaldo Taberi"
+259,2297,"Fabio Taberi"
+259,2298,"Littorio Taberi"
+259,2299,"Umberto Taberi"
+259,2300,"Maria Luisa Taberi"
+260,466,"Frederick Treves"
+260,1232,"John Merrick"
+260,2303,"Mrs Kendal"
+260,2304,"Carr Gomm"
+260,2305,Mothershead
+260,2306,Bytes
+260,2307,"Night Porter"
+260,2308,"Mrs Treves"
+260,2309,"Princess Alex"
+260,2310,Fox
+261,2311,"Fujino (voice)"
+261,2312,"Kyomoto (voice)"
+261,2313,"Homeroom Teacher (voice)"
+261,2314,"Man (voice)"
+261,2315,"Fujino's Sister (voice)"
+261,2316,"Editor (voice)"
+261,2317,"Newscaster (voice)"
+261,2318,"Announcer (voice)"
+261,2319,"Teacher (voice)"
+261,2320,"Friend's Mother (voice)"
+262,333,"D-16 / Megatron (voice)"
+262,746,"Alpha Trion (voice)"
+262,885,"Orion Pax / Optimus Prime (voice)"
+262,886,"Elita-1 (voice)"
+262,1345,"Sentinel Prime (voice)"
+262,1688,"Starscream (voice)"
+262,2324,"B-127 (voice)"
+262,2328,"Airachnid (voice)"
+262,2329,"Soundwave (voice)"
+262,2330,"Shockwave / Guard 2 (voice)"
+263,1028,"Count Volpe (voice)"
+263,2331,"Cricket (voice)"
+263,2332,"Geppetto (voice)"
+263,2333,"Pinocchio / Carlo (voice)"
+263,2334,"Priest (voice)"
+263,2335,"Podesta (voice)"
+263,2336,"Dottore (voice)"
+263,2337,"Candlewick (voice)"
+263,2338,"Spazzatura (voice)"
+263,2339,"Black Rabbits (voice)"
+264,2341,"Grace (voice)"
+264,2342,"Gilbert (voice)"
+264,2343,"Pinky (voice)"
+264,2344,"Ruth Appleby (voice)"
+264,2345,"Percy Pudel (voice)"
+264,2346,"Ken (voice)"
+264,2347,"Ian / Narelle (voice)"
+264,2348,"James the Magistrate (voice)"
+264,2349,"Owen Appleby (voice)"
+264,2350,"Ben Appleby (voice)"
+265,92,"Kim Man-seob"
+265,390,"Jürgen Hinzpeter"
+265,2353,"Hwang Tae-sul"
+265,2354,"Gu Jae-sik"
+265,2355,"Reporter Choi"
+265,2356,"Civvies Leader"
+265,2357,"Driver Cha"
+265,2358,"Driver Sin"
+265,2359,"Driver Ryoo"
+265,2360,"Illegal checkpoint Sergeant First Class Park"
+266,2361,Mother
+266,2362,Carmelo
+266,2363,Pedro
+266,2364,Jaibo
+266,2365,Meche
+266,2366,"School Principal"
+266,2367,Father
+266,2368,Cacarizo
+266,2369,Ruffian
+266,2370,Pelón
+267,2371,"Young Nezha (voice)"
+267,2372,"Youth Nezha / Jie Jie Shou Left (voice)"
+267,2373,"Ao Bing (voice)"
+267,2374,"Li Jing (voice)"
+267,2375,"Lady Yin (voice)"
+267,2376,"Master Taiyi (voice)"
+267,2377,"Shen Gongbao (voice)"
+267,2378,"Wuliang Xianweng (voice)"
+267,2379,"Ao Guang, Donghai Longwang / Seller (voice)"
+267,2380,"Ao Run, Xihai Longwang (voice)"
+268,2381,Sofì
+268,2382,Luì
+268,2383,Perfidia
+268,2384,Pongo
+268,2385,"Signora Marisa"
+268,2386,Presentatrice
+268,2387,"Vecchio saggio"
+268,2388,"Signor S (voce)"
+269,110,"John Brierley"
+269,2389,"Saroo Brierley"
+269,2390,Lucy
+269,2392,"Sue Brierley"
+269,2393,Guddu
+269,2394,"Mantosh Brierley"
+269,2395,"Kamla Munshi"
+269,2396,"Saroj Sood"
+269,2397,Noor
+269,2398,Rama
+270,2399,"Süleyman Dirliği"
+270,2400,Ayla
+270,2401,"Yaşlı Süleyman"
+270,2402,Ali
+270,2403,"Üsteğmen Mesut"
+270,2404,"Fuat Binbaşı"
+270,2405,"Hüseyin Dilbirliği"
+270,2406,"Yaşlı Nimet"
+270,2407,Nuran
+270,2408,"Nimet Dilbirliği"
+271,34,"M. Gustave"
+271,117,Ludwig
+271,202,Henckels
+271,389,Dmitri
+271,1375,"Mr. Moustafa"
+271,1514,Jopling
+271,2411,"Serge X."
+271,2414,"Deputy Kovacs"
+271,2416,"Young Author"
+271,2417,"M. Ivan"
+272,2419,Hiccup
+272,2420,Astrid
+272,2421,Stoick
+272,2422,Gobber
+272,2423,Snoutlout
+272,2424,Fishlegs
+272,2425,Ruffnut
+272,2426,Tuffnut
+272,2427,Hoark
+272,2428,Spitelout
+273,2421,"Stoick (voice)"
+273,2429,"Hiccup (voice)"
+273,2430,"Astrid (voice)"
+273,2431,"Gobber (voice)"
+273,2432,"Zephyr (voice)"
+273,2433,"Fishlegs (voice)"
+273,2434,"Nuffink (voice)"
+273,2435,"Snotlout (voice)"
+273,2437,"Tuffnut (voice)"
+274,72,"Mandira Rathod Khan"
+274,73,"Rizwan Khan"
+274,2440,"Sameer "Sam" Rathod Khan"
+274,2441,"Zakir Khan"
+274,2442,"Hasina Khan"
+274,2443,"Razia Khan"
+274,2444,"Rizwan (15 years old)"
+274,2445,"Rizwan (Young Child)"
+274,2446,"Young Sameer "Sam" Rathod"
+274,2447,"Reese Garrick"
+275,2448,"Christa-Maria Sieland"
+275,2449,"Gerd Wiesler"
+275,2450,"Georg Dreyman"
+275,2451,"Anton Grubitz"
+275,2452,"Bruno Hempf"
+275,2453,"Paul Hauser"
+275,2454,"Albert Jerska"
+275,2455,"Karl Wallner"
+275,2456,Udo
+275,2457,"Gregor Hessenstein"
+276,2458,Self
+276,2459,Self
+277,2460,Val
+277,2461,Jéssica
+277,2462,Bárbara
+277,2463,Carlos
+277,2464,Fabinho
+277,2465,Edna
+277,2466,Janaína
+277,2467,"Antônio Jardineiro"
+277,2468,Vandré
+277,2469,Raimunda
+278,2000,"Ilaria Cucchi"
+278,2470,"Stefano Cucchi"
+278,2471,"Giovanni Cucchi"
+278,2473,"Rita Calore"
+278,2474,Giulia
+278,2475,Giulia
+278,2476,"Carabiniere Arresto #1"
+278,2477,"Carabiniere Arresto #2"
+278,2478,"Carabiniere Arresto #3"
+278,2479,"Carabiniere Arresto #4"
+279,152,"Mark Hanna"
+279,435,"Jordan Belfort"
+279,2481,"Donnie Azoff"
+279,2482,"Naomi Lapaglia"
+279,2484,"Agent Patrick Denham"
+279,2485,"Max Belfort"
+279,2486,Brad
+279,2487,"Manny Riskin"
+279,2488,"Jean Jacques Saurel"
+279,2489,"Aunt Emma"
+280,1203,"J.J. Singleton"
+280,2490,"Henry Gondorff"
+280,2491,"Johnny Hooker"
+280,2492,"Doyle Lonnegan"
+280,2493,"Lt. Wm. Snyder"
+280,2495,Billie
+280,2496,"Kid Twist"
+280,2497,"Eddie Niles"
+280,2498,"F.B.I. Agent Polk"
+280,2499,"Erie Kid"
+281,1057,"Mrs. Bertholt"
+281,2500,"Dan Haywood"
+281,2501,"Tad Lawson"
+281,2502,"Hans Rolfe"
+281,2503,"Ernst Janning"
+281,2505,"Irene Hoffman Wallner"
+281,2506,"Rudolph Petersen"
+281,2507,"Harrison Byers"
+281,2508,"Emil Hahn"
+281,2509,"Kenneth Norris"
+282,721,POTUS
+282,2510,"William Radford"
+282,2511,"NASA Scientist Sandra Salas"
+282,2512,"NSA Director Donald Briggs"
+282,2513,"Faith Radford"
+282,2514,"David Radford"
+282,2515,"Mark Goodman"
+282,2516,"FBI Field Agent Sheila Jeffries"
+282,2517,"News Reporter"
+282,2518,"Secretary of Defense Walter Crystal"
+283,203,"Sonny Hayes"
+283,1557,"Ruben Cervantes"
+283,2521,"Joshua Pearce"
+283,2523,"Kate McKenna"
+283,2524,"Peter Banning"
+283,2525,"Kaspar Smolinski"
+283,2526,Bernadette
+283,2527,Nickleby
+283,2528,Fazio
+283,2529,Dodge
+284,288,"David Mansell"
+284,869,"Harry Mansell"
+284,984,"Becca Mansell"
+284,2530,"Hutch Mansell"
+284,2532,Lendina
+284,2533,"Wyatt Martin"
+284,2534,"Sheriff Abel"
+284,2537,"Brady Mansell"
+284,2538,"Sammy Mansell"
+284,2539,"The Barber"
+285,116,"Luther Stickell"
+285,208,Serling
+285,1340,"Ethan Hunt"
+285,2175,Kittridge
+285,2541,Grace
+285,2543,"Benji Dunn"
+285,2544,Gabriel
+285,2545,Paris
+285,2548,Walters
+285,2549,"General Sidney"
+286,2550,Tim
+286,2551,Millie
+286,2552,Jamie
+286,2553,Cath
+286,2554,Jordy
+286,2555,Luke
+286,2556,Carol
+286,2557,"Doctor Mendoza"
+286,2558,Keri
+286,2559,Chaplin
+287,2560,Superman
+287,2561,"Lois Lane"
+287,2562,"Lex Luthor"
+287,2563,"Mr. Terrific"
+287,2564,"Guy Gardner"
+287,2565,Hawkgirl
+287,2566,"The Engineer"
+287,2567,"Jimmy Olsen"
+287,2568,Gary
+287,2569,"Superman Robot #12 (voice)"
+288,2171,Edie
+288,2571,John
+288,2572,Nico
+288,2573,"Dad Meaney"
+288,2574,"The Chaperone"
+288,2575,"Perm Walters"
+288,2576,Leo
+288,2699,George
+288,2700,"Young Edie"
+288,2701,"Baby Girl"
+302,2702,"Danica Richards"
+302,2703,"Ava Brucks"
+302,2704,"Milo Griffin"
+302,2705,"Teddy Spencer"
+302,2706,"Stevie Ward"
+302,2707,"Julie James"
+302,2708,"Ray Bronson"
+302,2709,"Grant Spencer"
+302,2710,"Tyler Trevino"
+302,2711,"Helen Shivers"
+303,2712,"Red Sonja"
+303,2713,"Emperor Dragan the Magnificent"
+303,2714,Annisia
+303,2715,"Osin The Untouched"
+303,2716,Hawk
+303,2717,"General Karlak"
+303,2718,Amarak
+303,2719,Teresia
+303,2720,Varla
+303,2721,Ayala
+304,864,"Javier Cardona"
+304,2722,"Jack 'Cash' Conry"
+304,2724,"Josef Amali"
+304,2725,Jamie
+304,2726,Bron
+304,2727,Nacho
+304,2728,Mya
+304,2729,Rocco
+304,2730,Marcello
+304,2731,Juan
+305,515,"Inosuke Hashibira (voice)"
+305,1100,"Tanjiro Kamado (voice)"
+305,1101,"Nezuko Kamado (voice)"
+305,1102,"Zenitsu Agatsuma (voice)"
+305,1105,"Giyu Tomioka (voice)"
+305,1106,"Tengen Uzui (voice)"
+305,1460,"Genya Shinazugawa (voice)"
+305,1538,"Muzan Kibutsuji (voice)"
+305,2737,"Kanao Tsuyuri (voice)"
+305,2741,"Muichiro Tokito (voice)"
+306,332,"Duncan Kincaid"
+306,886,"Zora Bennett"
+306,2744,"Dr. Henry Loomis"
+306,2745,"Martin Krebs"
+306,2746,"Reuben Delgado"
+306,2747,"Teresa Delgado"
+306,2748,"Xavier Dobbs"
+306,2749,"Isabella Delgado"
+306,2750,Nina
+306,2751,LeClerc
+307,90,"Wolf (voice)"
+307,1586,"Diane Foxington (voice)"
+307,2753,"Snake (voice)"
+307,2754,"Tarantula (voice)"
+307,2755,"Shark (voice)"
+307,2756,"Piranha (voice)"
+307,2758,"Kitty Kat (voice)"
+307,2759,"Doom aka Susan (voice)"
+307,2760,"Pigtail Petrova (voice)"
+307,2761,"Commissioner Misty Luggins (voice)"
+309,2772,"Bai An"
+309,2773,"Wu Zheng"
+309,2774,"Long Tai"
+309,2775,"He Yinghao"
+309,2776,"He Ting"
+309,2777,"Lu Ping"
+309,2778,"Sang Kang"
+309,2779,Clay
+309,2780,"Jiu Shu"
+309,2781,Veterinary
+310,2782,Gangster
+310,2783,'Walden'
+310,2784,Magda
+310,2785,Viola
+310,2786,Daniel
+310,2787,Ryszard
+310,2788,'Łomek'
+310,2789,Marian
+310,2790,'Magi'
+310,2791,'Tysiek'
+311,32,"Frank Drebin Jr."
+311,368,"Detective Barnes"
+311,2793,"Beth Davenport"
+311,2794,"Ed Hocken Jr."
+311,2795,"Richard Cane"
+311,2796,"Chief Davis"
+311,2797,"Sig Gustafson"
+311,2799,"Detective Park"
+311,2800,"Detective Taylor"
+311,2801,"Not Nordberg Jr."
+312,888,Archer
+312,2802,Justine
+312,2804,Paul
+312,2805,James
+312,2806,Marcus
+312,2807,Gladys
+312,2808,Alex
+312,2809,"Captain Ed"
+312,2810,"Alex's Dad"
+312,2811,"Alex's Mom"
+313,2812,"Elio / Other Elio (voice)"
+313,2813,"Olga Solís (voice)"
+313,2814,"Glordon (voice)"
+313,2815,"Ambassador Helix (voice)"
+313,2816,"Lord Grigon (voice)"
+313,2817,"Ambassador Questa (voice)"
+313,2818,"Bryce (voice)"
+313,2819,"Caleb (voice)"
+313,2820,"Ambassador Tegmen (voice)"
+313,2821,"Ambassador Turais (voice)"
+315,72,Ambika
+315,2833,Joydev
+315,2834,Shuvankar
+315,2835,Shekhar
+315,2836,Shweta
+315,2837,Bikash
+315,2838,Bimal
+315,2839,NULL
+315,2840,NULL
+315,2841,NULL
+316,2722,"Reverend David Hill"
+316,2726,"John Wesley"
+316,2843,"Daryl Smith"
+316,2844,"Peter Kane"
+316,2845,"Marc Shelly"
+316,2846,Mina
+316,2847,"School Attorney"
+316,2849,"Myra Starr"
+316,2850,Self
+316,2851,"Lottie Jay"
+317,1605,Anya
+317,2852,Kelly
+317,2853,Ravi
+317,2854,Rhodie
+317,2855,Reyes
+317,2857,Scars
+317,2858,Donny
+317,2859,Nash
+317,2860,Bull
+317,2861,Gibbs
+318,2862,"Robert Miller"
+318,2863,"Alayna Wallace"
+318,2864,Gerry
+318,2865,"Chris Turner"
+318,2866,"Tyrone Jones"
+318,2867,"Danny Turner"
+318,2868,"Fahad Sahal"
+318,2869,Hakeem
+318,2870,"Fawwaz Abdullah"
+318,2871,Khaled
+320,33,Ibrahim
+320,1231,Ian
+320,2882,Elizabeth
+320,2883,Ron
+320,2885,Joyce
+320,2887,Stephen
+320,2888,"Donna De Freitas"
+320,2889,"Chris Hudson"
+320,2890,Bogdan
+320,2891,"Bobby Tanner"
+321,390,Nick
+321,2892,Lilli
+321,2893,Tom
+321,2894,Valeria
+321,2895,Bea
+321,2897,Girasol
+321,2898,Manu
+321,2899,Juan
+321,2900,Soledad
+321,2901,Nightclubber
+322,2902,Pete
+322,2903,Mora
+322,2904,Angel
+322,2905,Reaper
+322,2906,Muerto
+322,2907,Mingjue
+322,2908,Thanatos
+322,2909,Pequino
+322,2910,Lilliana
+322,2911,Trey
+323,2912,Max
+323,2913,Lou
+323,2914,Juno
+323,2915,Les
+323,2916,"Doc Sabian"
+323,2917,Sadie
+323,2918,"Screaming Man"
+323,2919,Ethan
+323,2920,Ellie
+323,2921,Norma
+324,568,"Reed Richards / Mister Fantastic"
+324,1767,"Ted Gilbert"
+324,2526,"Lynne Nichols / F4 Chief of Staff"
+324,2759,"Rachel Rozman"
+324,2794,"Harvey Elder / Mole Man"
+324,2802,"Shalla-Bal / Silver Surfer"
+324,2923,"Sue Storm / Invisible Woman"
+324,2924,"Ben Grimm / The Thing"
+324,2925,"Johnny Storm / Human Torch"
+324,2926,Galactus
+325,2932,"Anna Coleman"
+325,2933,"Tess Coleman"
+325,2934,"Harper Coleman"
+325,2935,"Lily Reyes"
+325,2936,Ryan
+325,2937,"Eric Reyes"
+325,2938,Ella
+325,2939,Maddie
+325,2940,Peg
+325,2941,Jake
+326,2942,Lila
+326,2943,Kara
+326,2944,"Nanay Eka"
+326,2945,Bugs
+326,2946,Rose
+326,2947,Miles
+326,2948,Rose
+326,2949,"Mom Wilms"
+326,2950,Mary
+326,2951,Jun
+328,2962,"Park Se-ri"
+328,2963,"Han Yun-seok"
+328,2964,"Kim Hyeon"
+328,2965,"Baek Seong-rae"
+328,2966,"Ko In-jeong"
+328,2967,"Ma Sol-ji"
+328,2968,"Bang Ha-young"
+328,2969,"Jung Da-wool"
+328,2970,Hong-il
+328,2971,Bok-hee
+329,1395,"Lorraine Warren"
+329,2973,"Ed Warren"
+329,2974,"Judy Warren"
+329,2975,"Tony Spera"
+329,2976,"Janet Smurl"
+329,2977,"Jack Smurl"
+329,2978,"Drew Thomas"
+329,2979,"Father Gordon"
+329,2980,"Heather Smurl"
+329,2981,"Dawn Smurl"
+330,2982,Lilo
+330,2983,Nani
+330,2984,"Stitch (voice)"
+330,2985,Jumba
+330,2986,Pleakley
+330,2987,"Cobra Bubbles"
+330,2988,Tūtū
+330,2989,"Mrs. Kekoa"
+330,2990,David
+330,2991,"Grand Councilwoman (voice)"
+331,932,"John Wick"
+331,1069,"The Chancellor"
+331,2992,Eve
+331,2994,Winston
+331,2995,"The Director"
+331,2997,Lena
+331,2998,Ella
+331,2999,Tatiana
+331,3000,"Daniel Pine"
+331,3001,Charon
+332,1050,"Yelena Belova"
+332,1348,"Robert Reynolds"
+332,3003,"Bucky Barnes"
+332,3004,"Valentina Allegra de Fontaine"
+332,3006,"Alexei Shostakov"
+332,3007,"John Walker"
+332,3008,"Ava Starr"
+332,3009,"Antonia Dreykov"
+332,3010,Mel
+332,3011,"Congressman Gary"
+333,113,"Agent Augustus Gibbons"
+333,1007,"Xander Cage"
+333,3013,Yelena
+333,3014,Yorgi
+333,3016,"Agent Toby Lee Shavers"
+333,3017,"Milan Sova"
+333,3018,Kirill
+333,3019,Kolya
+333,3020,Viktor
+333,3021,"Senator Dick Hotchkiss"
+334,3022,Pepper
+334,3023,"Michael Connor"
+334,3024,Adian
+334,3025,Werewolf
+334,3026,Laura
+334,3027,Hope
+334,3028,Vampire
+334,3029,Marcus
+334,3030,Trudy
+334,3031,Bryan
