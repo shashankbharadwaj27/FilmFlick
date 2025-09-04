@@ -22,7 +22,6 @@ export const fetchTopRatedMovies = createAsyncThunk(
     async (_, { rejectWithValue }) => {
         try {
             const response = await axios.get(`${base}/movie/top-rated`);
-            console.log(response.data)
             return response.data;
         } catch (error) {
             console.error('Error fetching top rated movies:', error.message);
@@ -37,7 +36,6 @@ export const fetchMovieDetails = createAsyncThunk(
     async (movieId, { rejectWithValue }) => {
         try {
             const response = await axios.get(`${base}/movie/${movieId}`);
-            console.log(response.data)
             return response.data[0];
         } catch (error) {
             console.error('Error fetching movie details:', error.message);

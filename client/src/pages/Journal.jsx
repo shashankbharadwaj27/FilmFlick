@@ -45,7 +45,6 @@ function Journal() {
     const groupReviewsByMonth = (reviews) => {
         return reviews.reduce((acc, review) => {
             const date = new Date(review.review_date);
-            // console.log(date)
             const monthYear = format(date, 'MMMM yyyy');
             if (!acc[monthYear]) acc[monthYear] = [];
             acc[monthYear].push(review);

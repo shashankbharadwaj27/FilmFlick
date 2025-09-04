@@ -16,7 +16,6 @@ const EditProfileModal = ({onClose}) => {
   const dispatch = useDispatch();
   
   const {user} = useSelector(state=>state.auth)
-  console.log('hello')
 
   const rawUserFavourites = useSelector(state => state.userData.favourites);
   const userFavourites = Array.isArray(rawUserFavourites) ? rawUserFavourites : [];
@@ -53,7 +52,6 @@ const EditProfileModal = ({onClose}) => {
         try {
           const res = await axios.get(`${base}/movie/search/${query}`);
           const results = res.data.results || [];
-          console.log(res)
           setSearchResults((prev) => {
             const updated = [...prev];
             updated[idx] = results;

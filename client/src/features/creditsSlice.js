@@ -8,7 +8,6 @@ export const fetchActorDetails = createAsyncThunk(
     async (actorId, { rejectWithValue }) => {
         try {
             const response = await axios.get(`${base}/person/${actorId}`);
-            console.log(response.data);
             return response.data;
         } catch (error) {
             console.error('Error fetching actor details:', error.message);
@@ -23,7 +22,6 @@ export const fetchActorCredits = createAsyncThunk(
     async (actorId, { rejectWithValue }) => {
         try {
             const response = await axios.get(`${base}/person/${actorId}/credits`);
-            console.log(response.data);
             return response.data;
         } catch (error) {
             console.error('Error fetching actor credits:', error.message);

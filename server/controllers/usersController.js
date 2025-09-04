@@ -31,7 +31,6 @@ export async function handleUserLogin(req, res) {
 // User Logout
 export async function handleUserLogout(req, res) {
     try {
-        console.log('logging out')
         res.cookie('Token', '', { maxAge: 1 });
         res.status(200).send('Logout successful');
     } catch (error) {
@@ -69,10 +68,8 @@ export async function handleUserSignUp(req, res) {
 
 export async function getUserInfo(req,res) {
     const {username} = req.body;
-    console.log('u:',username)
     try{
         const user = await queryDatabase('SELECT * FROM users WHERE username = ?', [username]);
-        console.log('user:',user)
         res.status(200).json(user);
     }catch(err){
         res.json({error: 'Failed to fetch user info'});
@@ -182,7 +179,6 @@ export async function handleGetProfileInfo(req, res) {
 export async function handleFollowRequest(req, res) {
     const { userToFollow, loggedInUser } = req.body;
     try {
-        console.log(req.body)
         // Check if already following
         const existingFollow = await queryDatabase(
             'SELECT * FROM followers WHERE follower_username=? AND following_username=?',
@@ -244,7 +240,6 @@ export async function handleGetFriendsLatestActivity(req, res) {
 
     // Map the usernames from the 'following' array
     const usernames = following?.map(user => user.username);
-    console.log(usernames);
     if (!usernames || usernames.length === 0) {
         return res.status(400).json({ message: 'No usernames provided.' });
     }
@@ -311,7 +306,6 @@ export async function handleUpdateProfile(req,res){
         const sql = `INSERT INTO user_favourites (username, movie_id) VALUES ${values}`;
         await queryDatabase(sql);
         }
-        console.log('inserted')
         res.json({ message: 'Profile updated successfully' });
     } catch (err) {
         console.error('Error updating profile:', err);

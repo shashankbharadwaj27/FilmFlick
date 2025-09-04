@@ -52,7 +52,7 @@ const MovieDetails = () => {
             <div className={`space-y-2 mb-6 ${darkMode ? 'text-gray-400' : 'text-gray-700'}`}>
               <p className="inline-flex gap-1">
                 <strong>Director: </strong> 
-                <Link className={`${darkMode ? 'hover:text-white' : 'hover:text-black'} font-medium`}>{movieDetails.director}</Link>
+                <Link to={`/person/${movieDetails.director_id}`} className={`${darkMode ? 'hover:text-white' : 'hover:text-black'} font-medium`}>{movieDetails.director_name}</Link>
               </p>
               <p><strong>Runtime:</strong> {movieDetails.runtime} mins</p>
             </div>
@@ -61,7 +61,7 @@ const MovieDetails = () => {
 
             <div className="inline-flex gap-2 mt-5 opacity-50">
               <a href={`${movieDetails.imdb_link}`} target="_main"><img src={darkMode ? imdbDark : imdbLight} className="w-10" alt="IMDb" /></a>
-              <a href={`https://www.themoviedb.org/movie/${movieDetails.tmdb_id}`} target="_main"><img src={darkMode ? tmdbDark : tmdbLight} className="w-16 pt-2.5" alt="TMDb" /></a>
+              <a href={`https://www.themoviedb.org/movie/${movieDetails.movie_tmdb_id}`} target="_main"><img src={darkMode ? tmdbDark : tmdbLight} className="w-16 pt-2.5" alt="TMDb" /></a>
             </div>
 
             {/* Tabs */}

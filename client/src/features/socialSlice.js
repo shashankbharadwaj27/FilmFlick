@@ -30,7 +30,6 @@ export const followUser = createAsyncThunk(
                 userToFollow:userToFollow,
                 loggedInUser:loggedInUser
             });
-            console.log(response);
             return response.data;
         } catch (error) {
             return rejectWithValue(error.response?.data || 'An error occurred');
@@ -59,7 +58,6 @@ export const unfollowUser = createAsyncThunk(
 export const fetchFollowingActivity = createAsyncThunk(
     '/loggedInUser/fetchFriendsLatestActivity',async ({following},{rejectWithValue})=>{
         try{
-            console.log(following);
             const response = await axios.post(`${base}/user/latest-friends-activity`,{
                 following:following,
             });

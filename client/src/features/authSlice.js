@@ -35,7 +35,6 @@ export const userSignup = createAsyncThunk('auth/signup', async ({ username, pas
 
 export const getUserInfo = createAsyncThunk('auth/userinfo',async(username,{rejectWithValue})=>{
     try {
-        console.log(username)
         const response = await axios.post(`${base}/user/info`, { username });
         const result = response.data;
         localStorage.setItem('user', JSON.stringify(result[0]));
