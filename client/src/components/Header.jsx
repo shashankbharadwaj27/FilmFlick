@@ -93,6 +93,7 @@ function Header() {
         const timeoutId = setTimeout(async () => {
             try {
                 const res = await axios.get(`${base}/movie/search/${searchQuery}`);
+                console.log(res.data)
                 setSearchResults(res.data.slice(0, 5)); // top 5 results
             } catch (err) {
                 console.error("Search failed:", err);

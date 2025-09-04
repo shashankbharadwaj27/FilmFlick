@@ -18,7 +18,8 @@ export default function Signup() {
     try {
         // Await the signup dispatch and navigate on success
         await dispatch(userSignup({ username, password, name })).unwrap();
-        navigate('/');
+        navigate('/login');
+        alert('Signup successful!! Login with you details😊');
         dispatch(clearErrors());
         setUsername(''); 
         setPassword('');

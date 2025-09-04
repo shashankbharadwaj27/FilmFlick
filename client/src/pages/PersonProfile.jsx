@@ -48,7 +48,7 @@ function PersonProfile() {
                 <strong>Nationality: </strong> 
                 <p className={`${darkMode ? 'hover:text-white' : 'hover:text-black'} font-medium`}>{actorDetails?actorDetails.nationality:'N/A'}</p>
               </span>
-              <p><strong>Occupation:</strong> Actor</p>
+              <p><strong>Occupation:</strong> {actorDetails?.occupation==="Actor"?"Actor":"Director"}</p>
             </div>
             <p className={`${darkMode ? 'text-gray-400' : 'text-gray-700'}`}>{actorDetails?actorDetails.bio:'N/A'}</p>
             <div className="inline-flex gap-2 mt-5 opacity-50">

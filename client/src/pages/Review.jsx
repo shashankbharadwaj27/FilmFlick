@@ -83,9 +83,9 @@ export default function Review() {
           <h1 className={`${darkMode ? 'text-gray-200' : 'text-gray-900'} text-3xl font-bold mb-2`}>
             {reviewDetails.title}
           </h1>
-          <p className={`${darkMode ? 'text-gray-400' : 'text-gray-700'} mb-4`}>
+          {/* <p className={`${darkMode ? 'text-gray-400' : 'text-gray-700'} mb-4`}>
             Directed by {reviewDetails.director}
-          </p>
+          </p> */}
           <p className={`${darkMode ? 'text-gray-400' : 'text-gray-700'} text-sm`}>
             Watched on {format(new Date(reviewDetails.review_date), 'MMMM d, yyyy')}
           </p>

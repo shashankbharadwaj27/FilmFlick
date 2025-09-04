@@ -7,6 +7,7 @@ export const fetchReviewDetails = createAsyncThunk(
   'reviews/fetchReviewDetails',
   async (reviewId) => {
     const response = await axios.get(`${base}/review/${reviewId}/details`);
+    console.log(response)
     return response.data;
   }
 );

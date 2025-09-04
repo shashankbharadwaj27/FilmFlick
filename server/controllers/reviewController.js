@@ -3,12 +3,12 @@ import { queryDatabase } from '../database/connection.js';
 
 // Fetch likes for a review
 export async function getLikes(reviewId) {
-  const query = 'SELECT username FROM Likes WHERE review_id = ?';
+  const query = 'SELECT username FROM likes WHERE review_id = ?';
   return queryDatabase(query, [reviewId]);
 }
 
 export async function getReview(reviewId) {
-  const query = 'SELECT ur.*,m.title,m.director,m.poster FROM user_reviews ur JOIN movies m ON m.movie_id = ur.movie_id WHERE review_id = ?';
+  const query = 'SELECT ur.*,m.title,m.poster FROM user_reviews ur JOIN movies m ON m.movie_id = ur.movie_id WHERE review_id = ?';
   return queryDatabase(query, [reviewId]);
 }
 
@@ -74,21 +74,25 @@ export async function handleUpdateReview(req, res) {
 
 // Controller to get review details with likes 
 export const getReviewDetails = async (req, res) => {
-  const reviewId = req.params.reviewId;
-
-  if (!reviewId) {
-    return res.status(400).json({ message: 'Review ID is required' });
+  const reviewId = parseInt(req.params.reviewId, 10);
+  if (isNaN(reviewId)) {
+    return res.status(400).json({ message: 'Invalid Review ID' });
   }
 
   try {
-    // Fetch likes in parallel
-    const [details,likes] = await Promise.all([
+    // Fetch review details and likes in parallel
+    const [details, likes] = await Promise.all([
       getReview(reviewId),
       getLikes(reviewId)
     ]);
 
+    if (!details) {
+      return res.status(404).json({ message: 'Review not found' });
+    }
+
     res.status(200).json({ details, likes });
   } catch (err) {
+    console.error('Error fetching review details:', err);
     res.status(500).json({ message: 'Error fetching data', error: err.message });
   }
 };
