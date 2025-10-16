@@ -306,7 +306,19 @@ export async function handleUpdateProfile(req,res){
         const sql = `INSERT INTO user_favourites (username, movie_id) VALUES ${values}`;
         await queryDatabase(sql);
         }
-        res.json({ message: 'Profile updated successfully' });
+        const updatedFavourites = await queryDatabase(
+            `SELECT m.* FROM user_favourites uf JOIN movies m on uf.movie_id = m.movie_id WHERE username = ?`,
+            [username]
+        );
+
+        // Send updated profile back
+        res.json({
+            username,
+            name,
+            bio,
+            location,
+            favourites: updatedFavourites.map(fav => fav.movie_id)
+        });
     } catch (err) {
         console.error('Error updating profile:', err);
         res.status(500).json({ message: 'Server error' });

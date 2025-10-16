@@ -1,22 +1,21 @@
 // src/pages/UserPublicProfilePage.jsx
 import React, { useEffect, useState, useCallback } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { useParams, Link, useNavigate } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import Loader from '../components/Loader';
 import FollowersFollowingModal from '../components/FollowersFollowingModal';
-import { getUserInfo } from "../features/authSlice";
 import { fetchTargetUserProfile, clearErrors } from '../features/targetUserSlice';
 import { followUser, unfollowUser, fetchFollowers, fetchFollowing } from '../features/socialSlice';
+import { getUserInfo } from '../features/authSlice';
 import image from '../assets/image.png';
 import { format } from 'date-fns';
 
 function UserProfile() {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
   const { username } = useParams();
   const { targetUser, isLoading, error } = useSelector(state => state.targetUser);
   const { user, isAuthenticated } = useSelector(state => state.auth);
-  const { followers, following } = useSelector(state => state.social);
+  const { following } = useSelector(state => state.social);
   const darkMode = useSelector((state) => state.darkMode.darkMode);
 
   const [isModalOpen, setIsModalOpen] = useState(false);

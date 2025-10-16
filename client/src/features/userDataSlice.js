@@ -103,8 +103,15 @@ const userDataSlice = createSlice({
             })
             .addCase(updateProfile.fulfilled, (state, action) => {
                 state.isLoading = false;
-                state.favourites = action.payload;
+
+                const { name, bio, location, favourites } = action.payload;
+                
+                state.favourites = favourites || state.favourites;
                 localStorage.setItem('favourites', JSON.stringify(state.favourites));
+
+                const storedUser = JSON.parse(localStorage.getItem('user')) || {};
+                const updatedUser = { ...storedUser, name, bio, location };
+                localStorage.setItem('user', JSON.stringify(updatedUser));
             })
             .addCase(updateProfile.rejected, (state, action) => {
                 state.isLoading = false;
