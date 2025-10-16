@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import Loader from '../components/Loader';
 import FollowersFollowingModal from '../components/FollowersFollowingModal';
+import { getUserInfo } from "../features/authSlice";
 import { fetchTargetUserProfile, clearErrors } from '../features/targetUserSlice';
 import { followUser, unfollowUser, fetchFollowers, fetchFollowing } from '../features/socialSlice';
 import image from '../assets/image.png';
@@ -45,7 +46,7 @@ function UserProfile() {
     if (username && username !== user?.username) {
       dispatch(fetchTargetUserProfile(username));
     }else{
-        navigate('/profile')
+        dispatch(getUserInfo(user?.username));
     }
     return () => dispatch(clearErrors());
   }, [dispatch, username, user]);
