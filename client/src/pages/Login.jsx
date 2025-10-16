@@ -89,9 +89,9 @@ export default function Login() {
 
             <button
               type="submit"
-              disabled={username.length < 8 || password.length < 8}
+              disabled={password.length < 8}
               className={`w-full mt-6 py-2 px-4 rounded-md text-white font-semibold 
-                ${username.length < 8 || password.length < 8 
+                ${password.length < 8 
                   ? 'bg-gray-400 cursor-not-allowed' 
                   : 'bg-indigo-600 hover:bg-indigo-700 transition duration-300 ease-in-out'}
               `}

@@ -59,7 +59,7 @@ export default function Signup() {
         </label>
         <input
           type="password"
-          placeholder="Password"
+          placeholder="Password (minimum 8 characters)"
           id="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
@@ -80,7 +80,7 @@ export default function Signup() {
 
         <button
           type="submit"
-          disabled={username.length < 8 || password.length < 8 || name.length === 0}
+          disabled={password.length < 8 || name.length === 0}
           className={`w-full mt-6 py-2 px-4 rounded-md text-white font-semibold 
             ${username.length < 8 || password.length < 8 || name.length === 0
               ? 'bg-gray-400 cursor-not-allowed'
