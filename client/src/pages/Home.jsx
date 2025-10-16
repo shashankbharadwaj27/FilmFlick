@@ -1,9 +1,9 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import {Link} from 'react-router-dom';
 import { fetchPopularMovies, fetchTopRatedMovies } from '../features/moviesSlice';
 import { fetchFollowing, fetchFollowingActivity } from '../features/socialSlice';
-import MovieSwiper from '../components/movieSwiper';
+import MovieSwiper from '../components/MovieSwiper';
 import Loader from '../components/Loader';
 import image from '../assets/image.png'
 
