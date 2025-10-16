@@ -82,7 +82,7 @@ export default function Signup() {
           type="submit"
           disabled={password.length < 8 || name.length === 0}
           className={`w-full mt-6 py-2 px-4 rounded-md text-white font-semibold 
-            ${username.length < 8 || password.length < 8 || name.length === 0
+            ${password.length < 8 || name.length === 0
               ? 'bg-gray-400 cursor-not-allowed'
               : 'bg-indigo-600 hover:bg-indigo-700 transition duration-300 ease-in-out'}
           `}
