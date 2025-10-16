@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-const base = 'http://localhost:3000/api'
+const base = import.meta.env.VITE_API_BASE_URL;
 export const fetchFollowers = createAsyncThunk('loggedInUser/followers', async ({ username },{rejectWithValue})=>{
     try{
         const response = await axios.get(`${base}/user/${username}/followers`);
@@ -142,7 +142,7 @@ const socialSlice = createSlice({
                 state.isLoading = false;
                 state.error = action.payload;
             })
-            .addCase(fetchFollowingActivity.pending, (state, action) => {
+            .addCase(fetchFollowingActivity.pending, (state) => {
                 state.isLoading = true;
             })
             .addCase(fetchFollowingActivity.fulfilled, (state, action) => {

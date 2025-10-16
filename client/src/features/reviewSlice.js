@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-const base = 'http://localhost:3000/api'
+const base = import.meta.env.VITE_API_BASE_URL;
 // Async thunk to fetch review details, including likes and comments
 export const fetchReviewDetails = createAsyncThunk(
   'reviews/fetchReviewDetails',
@@ -64,9 +64,6 @@ const reviewSlice = createSlice({
           state.status = 'failed';
           state.error = action.error.message;
         })
-        .addCase(addLike.pending,(state)=>{
-          // state.status = 'loading';
-        })
         .addCase(addLike.fulfilled,(state,action)=>{
           state.status = 'succeeded';
           state.likes.push({ username: action.meta.arg.username });
@@ -76,7 +73,7 @@ const reviewSlice = createSlice({
           state.error = action.error.message;
         })
         .addCase(removeLike.pending,(state)=>{
-          // state.status = 'loading';
+          state.status = 'loading';
         })
         .addCase(removeLike.fulfilled,(state,action)=>{
           state.status = 'succeeded';
@@ -87,7 +84,7 @@ const reviewSlice = createSlice({
           state.error = action.error.message;
         })
         .addCase(updateReview.pending, (state) => {
-          // state.status = 'loading';
+          state.status = 'loading';
         })
         .addCase(updateReview.fulfilled, (state, action) => {
           state.status = 'succeeded';

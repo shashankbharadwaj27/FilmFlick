@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from 'axios';
 
-const base = 'http://localhost:3000/api'
+const base = import.meta.env.VITE_API_BASE_URL;
 // Asynchronous thunk for fetching actor details
 export const fetchActorDetails = createAsyncThunk(
     'actor/fetchActorDetails',
