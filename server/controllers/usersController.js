@@ -85,7 +85,7 @@ export async function handleUserLogin(req, res) {
 // User Signup
 export async function handleUserSignUp(req, res) {
   const { username, password, name } = req.body;
-
+  console.log(req.body)
   // Validate input
   if (!username || !password || !name) {
     return handleError(res, 400, 'Username, password, and name are required');
@@ -98,7 +98,7 @@ export async function handleUserSignUp(req, res) {
   try {
     // Check if user exists
     const existingUsers = await queryDatabase(
-      'SELECT id FROM users WHERE username = ?',
+      'SELECT * FROM users WHERE username = ?',
       [username]
     );
 
@@ -115,8 +115,8 @@ export async function handleUserSignUp(req, res) {
 
     // Fetch created user
     const newUsers = await queryDatabase(
-      'SELECT * FROM users WHERE id = ?',
-      [result.insertId]
+      'SELECT * FROM users WHERE username = ?',
+      [username]
     );
 
     const newUser = newUsers[0];
