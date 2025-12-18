@@ -1,34 +1,41 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
+import { apiClient } from './authSlice';
 
-const base = import.meta.env.VITE_API_BASE_URL;
-export const fetchFollowers = createAsyncThunk('loggedInUser/followers', async ({ username },{rejectWithValue})=>{
-    try{
-        const response = await axios.get(`${base}/user/${username}/followers`);
-        return response.data;
-    }catch(err){
-        return rejectWithValue(err.response?.data || err.message);
+// Async thunk to fetch followers
+export const fetchFollowers = createAsyncThunk(
+    'loggedInUser/followers', 
+    async ({ username }, { rejectWithValue }) => {
+        try {
+            const response = await apiClient.get(`/user/${username}/followers`);
+            return response.data;
+        } catch (err) {
+            return rejectWithValue(err.response?.data || err.message);
+        }
     }
-});
+);
 
-//Async thunk to fetch followers
-export const fetchFollowing = createAsyncThunk('loggedInUser/following', async ({ username },{rejectWithValue})=>{
-    try{
-        const response = await axios.get(`${base}/user/${username}/following`);
-        return response.data;
-    }catch(err){
-        return rejectWithValue(err.response?.data || err.message);
+// Async thunk to fetch following
+export const fetchFollowing = createAsyncThunk(
+    'loggedInUser/following', 
+    async ({ username }, { rejectWithValue }) => {
+        try {
+            const response = await apiClient.get(`/user/${username}/following`);
+            return response.data;
+        } catch (err) {
+            return rejectWithValue(err.response?.data || err.message);
+        }
     }
-});
+);
 
-//Async thunk to follow user
+// Async thunk to follow user
 export const followUser = createAsyncThunk(
     'loggedInUser/followUser',
-    async ({userToFollow,loggedInUser}, { rejectWithValue }) => {
+    async ({ userToFollow, loggedInUser }, { rejectWithValue }) => {
         try {
-            const response = await axios.post(`${base}/user/follow`, { 
-                userToFollow:userToFollow,
-                loggedInUser:loggedInUser
+            const response = await apiClient.post(`/user/follow`, { 
+                userToFollow: userToFollow,
+                loggedInUser: loggedInUser
             });
             return response.data;
         } catch (error) {
@@ -40,9 +47,9 @@ export const followUser = createAsyncThunk(
 // Async thunk to unfollow a user
 export const unfollowUser = createAsyncThunk(
     'loggedInUser/unfollowUser',
-    async ({userToUnfollow,loggedInUser}, { rejectWithValue }) => {
+    async ({ userToUnfollow, loggedInUser }, { rejectWithValue }) => {
         try {
-            const response = await axios.delete(`${base}/user/unfollow`, {
+            const response = await apiClient.delete(`/user/unfollow`, {
                 data: {
                     userToUnfollow: userToUnfollow,
                     loggedInUser: loggedInUser,
@@ -55,27 +62,28 @@ export const unfollowUser = createAsyncThunk(
     }
 );
 
+// Async thunk to fetch following activity
 export const fetchFollowingActivity = createAsyncThunk(
-    '/loggedInUser/fetchFriendsLatestActivity',async ({following},{rejectWithValue})=>{
-        try{
-            const response = await axios.post(`${base}/user/latest-friends-activity`,{
-                following:following,
+    'loggedInUser/fetchFriendsLatestActivity',
+    async ({ following }, { rejectWithValue }) => {
+        try {
+            const response = await apiClient.post(`/user/latest-friends-activity`, {
+                following: following,
             });
+            console.log(response);
             return response.data;
-        }
-        catch(error){
-            return rejectWithValue(error.response?.data || 'An error occured');
+        } catch (error) {
+            return rejectWithValue(error.response?.data || 'An error occurred');
         }
     }
 );
 
-
 const socialSlice = createSlice({
     name: 'social',
     initialState: {
-        followers: JSON.parse(localStorage.getItem('followers')) || [],
-        following: JSON.parse(localStorage.getItem('following')) || [],
-        activity: JSON.parse(localStorage.getItem('followingActivity')) || [],
+        followers: [],
+        following: [],
+        activity: [],
         isLoading: false,
         error: null
     },
@@ -84,71 +92,83 @@ const socialSlice = createSlice({
             state.followers = [];
             state.following = [];
             state.activity = [];
+            state.error = null;
         }
     },
     extraReducers: (builder) => {
         builder
+            // Fetch Followers
             .addCase(fetchFollowers.pending, (state) => {
                 state.isLoading = true;
+                state.error = null;
             })
             .addCase(fetchFollowers.fulfilled, (state, action) => {
                 state.isLoading = false;
                 state.followers = action.payload;
-                localStorage.setItem("followers", JSON.stringify(action.payload));
             })
             .addCase(fetchFollowers.rejected, (state, action) => {
                 state.isLoading = false;
                 state.error = action.payload;
             })
-            .addCase(fetchFollowing.pending,(state)=>{
+            
+            // Fetch Following
+            .addCase(fetchFollowing.pending, (state) => {
                 state.isLoading = true;
+                state.error = null;
             })
             .addCase(fetchFollowing.fulfilled, (state, action) => {
                 state.isLoading = false;
                 state.following = action.payload;
-                localStorage.setItem("following", JSON.stringify(state.following));
             })
             .addCase(fetchFollowing.rejected, (state, action) => {
                 state.isLoading = false;
                 state.error = action.payload;
             })
-            .addCase(followUser.pending,(state)=>{
+            
+            // Follow User
+            .addCase(followUser.pending, (state) => {
                 state.isLoading = true;
+                state.error = null;
             })
             .addCase(followUser.fulfilled, (state, action) => {
                 state.isLoading = false;
-                const isAlreadyFollowing = state.following.some(user => user.id === action.payload.id);
+                const isAlreadyFollowing = state.following.some(
+                    user => user.id === action.payload.id
+                );
     
                 if (!isAlreadyFollowing) {
                     state.following.push(action.payload);
-                    localStorage.setItem("following", JSON.stringify(state.following));
                 }
             })
             .addCase(followUser.rejected, (state, action) => {
                 state.isLoading = false;
                 state.error = action.payload;
             })
-            .addCase(unfollowUser.pending,(state)=>{
+            
+            // Unfollow User
+            .addCase(unfollowUser.pending, (state) => {
                 state.isLoading = true;
+                state.error = null;
             })
             .addCase(unfollowUser.fulfilled, (state, action) => {
                 state.isLoading = false;
                 state.following = state.following.filter(
                     (user) => user.username !== action.payload.username
                 );
-                localStorage.setItem("following", JSON.stringify(state.following));
             })
             .addCase(unfollowUser.rejected, (state, action) => {
                 state.isLoading = false;
                 state.error = action.payload;
             })
+            
+            // Fetch Following Activity
             .addCase(fetchFollowingActivity.pending, (state) => {
                 state.isLoading = true;
+                state.error = null;
             })
             .addCase(fetchFollowingActivity.fulfilled, (state, action) => {
                 state.isLoading = false;
                 state.activity = action.payload;
-                localStorage.setItem("activity", JSON.stringify(action.payload));
             })
             .addCase(fetchFollowingActivity.rejected, (state, action) => {
                 state.isLoading = false;

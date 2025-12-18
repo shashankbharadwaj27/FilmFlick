@@ -1,7 +1,6 @@
 import {configureStore} from '@reduxjs/toolkit';
 import darkModeReducer from '../features/darkModeSlice';
 import moviesSliceReducer from '../features/moviesSlice';
-import creditsSliceReducer from '../features/creditsSlice';
 import reviewSlice from '../features/reviewSlice';
 import authSliceReducer from '../features/authSlice';
 import targetUserSlice from '../features/targetUserSlice';
@@ -12,7 +11,6 @@ const store = configureStore({
     reducer:{
         darkMode:darkModeReducer,
         movies:moviesSliceReducer,
-        actor:creditsSliceReducer,
         review:reviewSlice,
         auth:authSliceReducer,
         targetUser:targetUserSlice,

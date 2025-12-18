@@ -18,6 +18,7 @@ const useDebouncedSearch = (queries, callback, delay = 500) => {
         try {
           const base = import.meta.env.VITE_API_BASE_URL;
           const res = await axios.get(`${base}/movie/search/${query}`);
+          console.log(res);
           callback(index, res.data || []);
         } catch (err) {
           console.error("Search error:", err);

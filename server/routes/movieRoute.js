@@ -15,7 +15,7 @@ moviesRouter.get('/new-releases',handleNewReleases);
 
 moviesRouter.get('/credits/:id',handleGetMovieCredits);
 
-moviesRouter.get('/:id',handleGetMovieDetails);
+moviesRouter.get('/:movieId',handleGetMovieDetails);
 
 moviesRouter.get('/search/:query',handleSearchResults);
 

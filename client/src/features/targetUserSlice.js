@@ -1,10 +1,11 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
+import { apiClient } from './authSlice';
 
 const base = import.meta.env.VITE_API_BASE_URL;
 export const fetchTargetUserProfile = createAsyncThunk('/user/profile', async (username, { rejectWithValue }) => {
     try {
-        const response = await axios.get(`${base}/user/${username}/profile`);
+        const response = await apiClient.get(`/user/${username}/profile`);
         return response.data; 
     } catch (error) {
         return rejectWithValue(error.response?.data || 'An error occurred');
@@ -38,9 +39,9 @@ const targetUserSlice = createSlice({
             })
             .addCase(fetchTargetUserProfile.fulfilled, (state, action) => {
                 state.isLoading = false;
-                const { userinfo,reviews, favourites,followers,following } = action.payload;
+                const { userInfo,reviews, favourites,followers,following } = action.payload;
                 state.targetUser = {
-                    userinfo,
+                    userInfo,
                     reviews,
                     favourites,
                     followers,

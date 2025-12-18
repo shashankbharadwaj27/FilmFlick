@@ -1,6 +1,6 @@
 import React, { useState, useEffect, forwardRef } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { updateReview } from '../features/reviewSlice'; // Only updateReview now
+import { updateReview } from '../features/reviewSlice';
 import DateInput from './DateInput';
 import Checkbox from './Checkbox';
 import Rating from './Rating';
@@ -72,7 +72,7 @@ const EditModal = forwardRef(({ movie, existingReview, isOpen, onClose }, ref) =
 
         try {
             await dispatch(updateReview(logDetails)).unwrap();
-            onClose(); // Close modal on success
+            onClose();
         } catch (error) {
             console.error("Error updating review:", error);
         }
@@ -81,9 +81,18 @@ const EditModal = forwardRef(({ movie, existingReview, isOpen, onClose }, ref) =
     if (!isOpen) return null;
 
     return (
-        <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
-            <div className={`bg-white rounded-lg shadow-lg p-6 ${darkMode ? 'bg-gray-800 text-gray-300' : 'text-gray-800'}`}>
-                <h2 className="text-xl font-semibold mb-4">Edit Review</h2>
+        <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50 backdrop-blur-sm">
+            <div className={`rounded-lg shadow-2xl p-6 w-full max-w-md ${
+                darkMode 
+                    ? 'bg-gray-800 text-gray-100' 
+                    : 'bg-white text-gray-800'
+            }`}>
+                <h2 className={`text-2xl font-semibold mb-6 ${
+                    darkMode ? 'text-gray-100' : 'text-gray-900'
+                }`}>
+                    Edit Review
+                </h2>
+                
                 <form onSubmit={handleSubmit} className="flex flex-col space-y-4">
                     <DateInput
                         value={watchDate}
@@ -93,6 +102,7 @@ const EditModal = forwardRef(({ movie, existingReview, isOpen, onClose }, ref) =
                         error={error}
                         darkMode={darkMode}
                     />
+                    
                     <Checkbox
                         id="rewatch"
                         checked={rewatch}
@@ -100,6 +110,7 @@ const EditModal = forwardRef(({ movie, existingReview, isOpen, onClose }, ref) =
                         label="Watched this movie before?"
                         darkMode={darkMode}
                     />
+                    
                     <Checkbox
                         id="contain-spoilers"
                         checked={containSpoilers}
@@ -107,31 +118,47 @@ const EditModal = forwardRef(({ movie, existingReview, isOpen, onClose }, ref) =
                         label="Contains spoilers?"
                         darkMode={darkMode}
                     />
+                    
                     <Rating
                         rating={rating}
                         onRatingClick={setRating}
+                        darkMode={darkMode}
                     />
+                    
                     <TextArea
                         text={review}
                         onChange={handleTextChange}
                         darkMode={darkMode}
-                        rows="3"
+                        rows="4"
                         columns="30"
                         placeholder="Update your review"
                     />
-                    <button
-                        type="submit"
-                        className="py-2 px-4 bg-blue-500 text-white font-semibold rounded-lg shadow-sm hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    >
-                        Save Changes
-                    </button>
+                    
+                    <div className="flex gap-3 mt-6">
+                        <button
+                            type="submit"
+                            className={`flex-1 py-2.5 px-4 font-semibold rounded-lg shadow-sm transition-colors ${
+                                darkMode
+                                    ? 'bg-blue-600 text-white hover:bg-blue-700 focus:ring-blue-500'
+                                    : 'bg-blue-500 text-white hover:bg-blue-600 focus:ring-blue-400'
+                            } focus:outline-none focus:ring-2 focus:ring-offset-2`}
+                        >
+                            Save Changes
+                        </button>
+                        
+                        <button
+                            type="button"
+                            onClick={onClose}
+                            className={`flex-1 py-2.5 px-4 font-semibold rounded-lg shadow-sm transition-colors ${
+                                darkMode
+                                    ? 'bg-gray-700 text-gray-200 hover:bg-gray-600 focus:ring-gray-500'
+                                    : 'bg-gray-200 text-gray-700 hover:bg-gray-300 focus:ring-gray-400'
+                            } focus:outline-none focus:ring-2 focus:ring-offset-2`}
+                        >
+                            Cancel
+                        </button>
+                    </div>
                 </form>
-                <button
-                    onClick={onClose}
-                    className="mt-4 text-blue-500 hover:underline"
-                >
-                    Close
-                </button>
             </div>
         </div>
     );

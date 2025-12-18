@@ -1,25 +1,14 @@
-import {queryDatabase} from '../database/connection.js';
+import * as tmdb from '../services/tmdb.js';
 
 export async function handleGetPersonDetails(req, res) {
     const personId = req.params.id;
 
     try {
-        // Try fetching person details from the actors table
-        let personDetails = await queryDatabase(`SELECT * FROM actors WHERE id = ?`, [personId]);
-
-        // If not found in actors, try in directors
-        if (personDetails.length === 0) {
-            personDetails = await queryDatabase(`SELECT * FROM directors WHERE director_id = ?`, [personId]);
-
-            if (personDetails.length === 0) {
-                return res.status(404).json({ message: 'Person not found' });
-            }
-        }
-
-        return res.json(personDetails[0]);
-
-    } catch (err) {
-        return res.status(err.statusCode || 500).json({ message: err.message });
+        const data = await tmdb.getPersonDetails(personId);
+        res.json(data);
+    } catch (error) {
+        console.error('Get person details error:', error);
+        res.status(500).json({ message: 'Failed to fetch person details' });
     }
 }
 

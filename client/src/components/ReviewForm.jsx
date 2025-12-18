@@ -18,10 +18,10 @@ function ReviewForm({ movie }) {
     const user = useSelector((state) => state.auth?.user);
     const watchedMovies = useSelector(state => state.userData?.reviews);
     
-    const [rewatch, setRewatch] = useState(watchedMovies && watchedMovies.some((watchedMovie) => watchedMovie.movie_id === movie.movie_id));
+    const [rewatch, setRewatch] = useState(watchedMovies && watchedMovies.some((watchedMovie) => watchedMovie.movie_id === movie.id));
     useEffect(() => {
-        setRewatch(watchedMovies && watchedMovies.some((watchedMovie) => watchedMovie.movie_id === movie.movie_id));
-    }, [watchedMovies, movie.movie_id]);
+        setRewatch(watchedMovies && watchedMovies.some((watchedMovie) => watchedMovie.id === movie.id));
+    }, [watchedMovies, movie.id]);
 
     const today = new Date().toISOString().split('T')[0];
     const minDate = '1970-01-01';
@@ -53,7 +53,7 @@ function ReviewForm({ movie }) {
             return;
         }
         const logDetails = {
-            movie,
+            movie:movie,
             date: watchDate,
             rating,
             rewatch,

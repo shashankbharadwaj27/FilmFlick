@@ -1,5 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import axios from 'axios'
+import axios from 'axios';
+import { apiClient } from './authSlice';
 
 const base = import.meta.env.VITE_API_BASE_URL;
 
@@ -7,12 +8,12 @@ export const addMovieToJournal = createAsyncThunk(
     'user/addMovieToJournal',
     async (logDetails, { rejectWithValue }) => {
         try {
-            const response = await axios.post(`${base}/user/log-movie`, logDetails);
+            const response = await apiClient.post(`/user/log-movie`, logDetails);
             const insertedLog = response.data;
             const newMovie = {
                 ...insertedLog,
                 title: logDetails.movie.title,
-                poster: logDetails.movie.poster
+                poster: logDetails.movie.poster_path
             };
             return newMovie;
         } catch (error) {
@@ -21,20 +22,24 @@ export const addMovieToJournal = createAsyncThunk(
     }
 );
 
-export const fetchUserFavourites = createAsyncThunk(`loggedInUser/favourites`, async ({ username }, { rejectWithValue }) => {
-    try {
-        const response = await axios.get(`${base}/user/${username}/favourites`);
-        return response.data;
-    } catch (error) {
-        return rejectWithValue(error.response?.data || 'An error occurred');
+export const fetchUserFavourites = createAsyncThunk(
+    'loggedInUser/favourites', 
+    async ({ username }, { rejectWithValue }) => {
+        try {
+            const response = await apiClient.get(`/user/${username}/favourites`);
+            console.log(response.data);
+            return response.data;
+        } catch (error) {
+            return rejectWithValue(error.response?.data || 'An error occurred');
+        }
     }
-});
+);
 
 export const getUserReviews = createAsyncThunk(
     'loggedInUser/getUserReviews',
     async ({ username }, { rejectWithValue }) => {
         try {
-            const response = await axios.get(`${base}/review/getUserReviews/${username}`);
+            const response = await apiClient.get(`/review/getUserReviews/${username}`);
             return response.data;
         } catch (err) {
             return rejectWithValue(err.response?.data || err.message);
@@ -43,19 +48,21 @@ export const getUserReviews = createAsyncThunk(
 );
 
 export const updateProfile = createAsyncThunk(
-  'user/updateProfile',
-  async (profileData, { rejectWithValue }) => {
-    try {
-      const response = await axios.put(`${base}/user/update-profile`, profileData);
-      return response.data; 
-    } catch (err) {
-      return rejectWithValue(err.response.data || 'Failed to update profile');
+    'user/updateProfile',
+    async (profileData, { rejectWithValue }) => {
+        try {
+            const response = await apiClient.put(`/user/update-profile`, profileData);
+            return response.data; 
+        } catch (err) {
+            return rejectWithValue(err.response?.data || 'Failed to update profile');
+        }
     }
-  }
 );
+
 const initialState = {
-    reviews: JSON.parse(localStorage.getItem('reviews')) || [],
-    favourites: JSON.parse(localStorage.getItem('favourites')) || [],
+    reviews: [],
+    favourites: [],
+    user: null,
     isLoading: false,
     error: null,
 };
@@ -67,6 +74,13 @@ const userDataSlice = createSlice({
         resetUserData(state) {
             state.reviews = [];
             state.favourites = [];
+            state.user = null;
+            state.error = null;
+        },
+        // Add a reducer to handle user data updates
+        updateUserData(state, action) {
+            const { name, bio, location } = action.payload;
+            state.user = { ...state.user, name, bio, location };
         }
     },
     extraReducers: (builder) => {
@@ -78,7 +92,6 @@ const userDataSlice = createSlice({
             .addCase(getUserReviews.fulfilled, (state, action) => {
                 state.isLoading = false;
                 state.reviews = action.payload;
-                localStorage.setItem('reviews', JSON.stringify(state.reviews));
             })
             .addCase(getUserReviews.rejected, (state, action) => {
                 state.isLoading = false;
@@ -91,7 +104,6 @@ const userDataSlice = createSlice({
             .addCase(fetchUserFavourites.fulfilled, (state, action) => {
                 state.isLoading = false;
                 state.favourites = action.payload;
-                localStorage.setItem('favourites', JSON.stringify(state.favourites));
             })
             .addCase(fetchUserFavourites.rejected, (state, action) => {
                 state.isLoading = false;
@@ -106,20 +118,21 @@ const userDataSlice = createSlice({
 
                 const { name, bio, location, favourites } = action.payload;
                 
+                // Update state 
                 state.favourites = favourites || state.favourites;
-                localStorage.setItem('favourites', JSON.stringify(state.favourites));
-
-                const storedUser = JSON.parse(localStorage.getItem('user')) || {};
-                const updatedUser = { ...storedUser, name, bio, location };
-                localStorage.setItem('user', JSON.stringify(updatedUser));
+                state.user = { 
+                    ...state.user, 
+                    name, 
+                    bio, 
+                    location 
+                };
             })
             .addCase(updateProfile.rejected, (state, action) => {
                 state.isLoading = false;
                 state.error = action.payload;
-            })
-            
+            });
     }
 });
 
-export const { resetUserData } = userDataSlice.actions;
+export const { resetUserData, updateUserData } = userDataSlice.actions;
 export default userDataSlice.reducer;

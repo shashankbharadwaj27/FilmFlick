@@ -1,126 +1,111 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from 'axios';
+import { apiClient } from "./authSlice";
 
 const base = import.meta.env.VITE_API_BASE_URL;
-// Asynchronous thunk for fetching popular movies
-export const fetchPopularMovies = createAsyncThunk(
-    'movies/fetchPopularMovies',
-    async (_, { rejectWithValue }) => {
-        try {
-            const response = await axios.get(`${base}/movie/new-releases`);
-            return response.data; 
-        } catch (error) {
-            console.error('Error fetching popular movies:', error.message);
-            return rejectWithValue(error.response?.data || error.message);
-        }
+
+
+// Generic thunk factory to reduce repetition
+const createMovieThunk = (name, endpoint) =>
+  createAsyncThunk(name, async (payload, { rejectWithValue }) => {
+    try {
+      const url = typeof payload === 'string' ? `${endpoint}/${payload}` : endpoint;
+      const response = await apiClient.get(url);
+      return response.data;
+    } catch (error) {
+      console.error(`Error ${name}:`, error.message);
+      return rejectWithValue(error.response?.data || error.message);
     }
+  });
+
+// Thunks
+export const fetchPopularMovies = createMovieThunk(
+  'movies/fetchPopularMovies',
+  '/movie/new-releases'
 );
 
-// Asynchronous thunk for fetching top-rated movies
-export const fetchTopRatedMovies = createAsyncThunk(
-    'movies/fetchTopRatedMovies',
-    async (_, { rejectWithValue }) => {
-        try {
-            const response = await axios.get(`${base}/movie/top-rated`);
-            return response.data;
-        } catch (error) {
-            console.error('Error fetching top rated movies:', error.message);
-            return rejectWithValue(error.response?.data || error.message);
-        }
-    }
+export const fetchTopRatedMovies = createMovieThunk(
+  'movies/fetchTopRatedMovies',
+  '/movie/top-rated'
 );
 
-// Asynchronous thunk for fetching movie details
-export const fetchMovieDetails = createAsyncThunk(
-    'movies/fetchMovieDetails',
-    async (movieId, { rejectWithValue }) => {
-        try {
-            const response = await axios.get(`${base}/movie/${movieId}`);
-            return response.data[0];
-        } catch (error) {
-            console.error('Error fetching movie details:', error.message);
-            return rejectWithValue(error.response?.data || error.message);
-        }
-    }
+export const fetchMovieDetails = createMovieThunk(
+  'movies/fetchMovieDetails',
+  '/movie'
 );
 
-// Asynchronous thunk for fetching movie cast
-export const fetchCast = createAsyncThunk(
-    'movies/fetchCast',
-    async (movieId, { rejectWithValue }) => {
-        try {
-            const response = await axios.get(`${base}/movie/credits/${movieId}`);
-            return response.data;
-        } catch (error) {
-            console.error('Error fetching movie credits:', error.message);
-            return rejectWithValue(error.response?.data || error.message);
-        }
-    }
-);
+// Helper function to handle async state
+const handleAsyncState = (state, action, key) => {
+  state.loading = false;
+  state.error = null;
+  if (key) state[key] = action.payload;
+};
+
+const handleAsyncError = (state, action) => {
+  state.loading = false;
+  state.error = action.payload;
+};
+
+// Initial state
+const initialState = {
+  popular: [],
+  topRated: [],
+  movieDetails: {},
+  loading: false,
+  error: null,
+};
 
 // Creating the movies slice
 const moviesSlice = createSlice({
-    name: 'movies',
-    initialState: {
-        popular: [],
-        topRated: [],
-        movieDetails: [],
-        cast:[],
-        loading: false,
-        error: null,
+  name: 'movies',
+  initialState,
+  reducers: {
+    clearMovieDetails: (state) => {
+      state.movieDetails = {};
     },
-    reducers: {},
-    extraReducers: (builder) => {
-        builder
-            .addCase(fetchPopularMovies.pending, (state) => {
-                state.loading = true;
-                state.error = null;
-            })
-            .addCase(fetchPopularMovies.fulfilled, (state, action) => {
-                state.loading = false;
-                state.popular = action.payload;
-            })
-            .addCase(fetchPopularMovies.rejected, (state, action) => {
-                state.loading = false;
-                state.error = action.payload;
-            })
-            .addCase(fetchTopRatedMovies.pending, (state) => {
-                state.loading = true;
-                state.error = null;
-            })
-            .addCase(fetchTopRatedMovies.fulfilled, (state, action) => {
-                state.loading = false;
-                state.topRated = action.payload;
-            })
-            .addCase(fetchTopRatedMovies.rejected, (state, action) => {
-                state.loading = false;
-                state.error = action.payload;
-            })
-            .addCase(fetchMovieDetails.pending, (state) => {
-                state.loading = true;
-                state.error = null;
-            })
-            .addCase(fetchMovieDetails.fulfilled, (state, action) => {
-                state.loading = false;
-                state.movieDetails = action.payload;
-            })
-            .addCase(fetchMovieDetails.rejected, (state, action) => {
-                state.loading = false;
-                state.error = action.payload;
-            })
-            .addCase(fetchCast.pending, (state) => {
-                state.loading = true;
-                state.error = null;
-            })
-            .addCase(fetchCast.fulfilled, (state, action) => {
-                state.loading = false;
-                state.cast = action.payload;
-            })
-            .addCase(fetchCast.rejected, (state, action) => {
-                state.loading = false;
-                state.error = action.payload;
-            });
+    clearError: (state) => {
+      state.error = null;
     },
+  },
+  extraReducers: (builder) => {
+    // Popular Movies
+    builder
+      .addCase(fetchPopularMovies.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(fetchPopularMovies.fulfilled, (state, action) => {
+        handleAsyncState(state, action, 'popular');
+      })
+      .addCase(fetchPopularMovies.rejected, (state, action) => {
+        handleAsyncError(state, action);
+      })
+
+      // Top Rated Movies
+      .addCase(fetchTopRatedMovies.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(fetchTopRatedMovies.fulfilled, (state, action) => {
+        handleAsyncState(state, action, 'topRated');
+      })
+      .addCase(fetchTopRatedMovies.rejected, (state, action) => {
+        handleAsyncError(state, action);
+      })
+
+      // Movie Details
+      .addCase(fetchMovieDetails.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(fetchMovieDetails.fulfilled, (state, action) => {
+        handleAsyncState(state, action, 'movieDetails');
+      })
+      .addCase(fetchMovieDetails.rejected, (state, action) => {
+        handleAsyncError(state, action);
+      })
+  },
 });
 
+export const { clearMovieDetails, clearError } = moviesSlice.actions;
 export default moviesSlice.reducer;

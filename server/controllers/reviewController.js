@@ -1,5 +1,6 @@
 // controllers/reviewController.js
 import { queryDatabase } from '../database/connection.js';
+import { getMovieDetails } from '../services/tmdb.js';
 
 // Fetch likes for a review
 export async function getLikes(reviewId) {
@@ -8,8 +9,12 @@ export async function getLikes(reviewId) {
 }
 
 export async function getReview(reviewId) {
-  const query = 'SELECT ur.*,m.title,m.poster FROM user_reviews ur JOIN movies m ON m.movie_id = ur.movie_id WHERE review_id = ?';
-  return queryDatabase(query, [reviewId]);
+  const query = 'SELECT ur.* FROM user_reviews ur WHERE review_id = ?';
+  const result = await queryDatabase(query, [reviewId]);
+  const review = result[0];
+  const data = await getMovieDetails(review.movie_id);
+  const populated_review  = {...review, ...data};
+  return populated_review;
 }
 
 //Get user reviews
@@ -17,10 +22,16 @@ export async function handleGetUserReviews(req, res) {
     const username = req.params.username;
     try {
         const results = await queryDatabase(
-            'SELECT user_reviews.*,movies.* FROM user_reviews JOIN movies on user_reviews.movie_id = movies.movie_id WHERE user_reviews.username = ?',
+            'SELECT user_reviews.* FROM user_reviews WHERE user_reviews.username = ?',
             [username]
         );
-        res.status(200).json(results);
+        const formatted_results = await Promise.all(
+          results.map(async (entry) => {
+            const data = await getMovieDetails(entry.movie_id);
+            return {...entry, ...data}
+          })
+        )
+        res.status(200).json(formatted_results);
     }catch(err){
         res.status(500).json({error:'An error occurred while fetching reviews' });
     }

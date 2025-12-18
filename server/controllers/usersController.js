@@ -1,326 +1,588 @@
-import {queryDatabase} from '../database/connection.js';
-import {createUserToken} from '../middlewares/authentication.js';
-import decodeToken from '../services/auth.js';
-import { validationResult } from 'express-validator'
-import bcrypt from 'bcrypt'
-import mysql from 'mysql';
+import { queryDatabase } from '../database/connection.js';
+import { createAccessToken, createRefreshToken, validateRefreshToken  } from '../middlewares/authentication.js';
+import bcrypt from 'bcrypt';
+import { getMovieDetails } from '../services/tmdb.js';
+
+// Constants
+const SALT_ROUNDS = 10;
+const COOKIE_CONFIG = { httpOnly: true, secure: true, sameSite: 'Strict' };
+
+const ACCESS_COOKIE_CONFIG = { 
+  httpOnly: true, 
+  secure: process.env.NODE_ENV === 'production', // Only HTTPS in production
+  sameSite: 'Strict',
+  maxAge: 15 * 60 * 1000 // 15 minutes
+};
+
+const REFRESH_COOKIE_CONFIG = { 
+  httpOnly: true, 
+  secure: process.env.NODE_ENV === 'production',
+  sameSite: 'Strict',
+  maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
+  path: '/api/user' // Only sent to refresh endpoint
+};
+
+// Helper to remove sensitive fields
+const sanitizeUser = (user) => {
+  const { password, email, ...userData } = user;
+  return userData;
+};
+
+// Helper for consistent error responses
+const handleError = (res, status, message, error = null) => {
+  if (error) console.error(message, error);
+  res.status(status).json({ error: message });
+};
 
 // User Login
 export async function handleUserLogin(req, res) {
-    const { username, password } = req.body;
+  const { username, password } = req.body;
+
+  if (!username || !password) {
+    return handleError(res, 400, 'Username and password are required');
+  }
+
+  try {
+    const users = await queryDatabase('SELECT * FROM users WHERE username = ?', [username]);
+    
+    if (!users.length) {
+      return res.status(401).json({ error: 'Invalid credentials' });
+    }
+
+    const user = users[0];
+    const isPasswordCorrect = await bcrypt.compare(password, user.password);
+
+    if (!isPasswordCorrect) {
+      return res.status(401).json({ error: 'Invalid credentials' });
+    }
+
+    const accessToken = createAccessToken(user.username);
+    const refreshToken = createRefreshToken(user.username);
+
+
+    // Store refresh token in database
+    await queryDatabase(
+        'INSERT INTO refresh_tokens (username, token, expires_at) VALUES (?, ?, ?)',
+        [
+            user.username,
+            refreshToken,
+            new Date(Date.now() + 7 * 24 * 60 * 60 * 1000) // 7 days from creation
+        ]
+    );
+
+    res.cookie('accessToken', accessToken, ACCESS_COOKIE_CONFIG);
+    res.cookie('refreshToken', refreshToken, REFRESH_COOKIE_CONFIG);
+    
+    res.status(200).json({ 
+      user: sanitizeUser(user),
+    });
+
+  } catch (error) {
+    handleError(res, 500, 'Login failed', error);
+  }
+}
+
+// User Signup
+export async function handleUserSignUp(req, res) {
+  const { username, password, name } = req.body;
+
+  // Validate input
+  if (!username || !password || !name) {
+    return handleError(res, 400, 'Username, password, and name are required');
+  }
+
+  if (password.length < 8) {
+    return handleError(res, 400, 'Password must be at least 6 characters');
+  }
+
+  try {
+    // Check if user exists
+    const existingUsers = await queryDatabase(
+      'SELECT id FROM users WHERE username = ?',
+      [username]
+    );
+
+    if (existingUsers.length) {
+      return res.status(409).json({ error: 'Username already exists' });
+    }
+
+    // Hash password and create user
+    const hashedPassword = await bcrypt.hash(password, SALT_ROUNDS);
+    const result = await queryDatabase(
+      'INSERT INTO users (username, name, password) VALUES (?, ?, ?)',
+      [username, name, hashedPassword]
+    );
+
+    // Fetch created user
+    const newUsers = await queryDatabase(
+      'SELECT * FROM users WHERE id = ?',
+      [result.insertId]
+    );
+
+    const newUser = newUsers[0];
+
+    const accessToken = createAccessToken(newUser.username);
+    const refreshToken = createRefreshToken(newUser.username);
+
+    await queryDatabase(
+        'INSERT INTO refresh_tokens (username, token, expires_at) VALUES (?, ?, ?)',
+        [
+            newUser.username,
+            refreshToken,
+            new Date(Date.now() + 7 * 24 * 60 * 60 * 1000)
+        ]
+    );
+
+    res.cookie('accessToken', accessToken, ACCESS_COOKIE_CONFIG);
+    res.cookie('refreshToken', refreshToken, REFRESH_COOKIE_CONFIG);
+
+    res.status(201).json({ 
+      user: sanitizeUser(newUser),
+    });
+
+  } catch (error) {
+    handleError(res, 500, 'Signup failed', error);
+  }
+}
+
+// Verify Authentication - Check if user has valid access token
+export async function handleVerifyAuth(req, res) {
+  try {
+    // req.user is set by validateAccessToken middleware
+    const { username } = req.user;
+
+    // Fetch fresh user data from database
+    const users = await queryDatabase(
+      'SELECT username, name, pfp_url, bio, location, created_at FROM users WHERE username = ?',
+      [username]
+    );
+
+    if (!users.length) {
+      return res.status(404).json({ error: 'User not found' });
+    }
+
+    res.status(200).json({ 
+      user: users[0] 
+    });
+  } catch (error) {
+    handleError(res, 500, 'Verification failed', error);
+  }
+}
+
+//Handle Refresh Token
+export async function handleRefreshToken(req, res) {
     try {
-        const user = await queryDatabase('SELECT * FROM users WHERE username = ?', [username]);
-        if (!user.length) {
-            return res.status(400).json({ message: "Username doesn't exist" });
+        // req.refreshToken is set by validateRefreshToken middleware
+        const { username, token } = req.refreshToken;
+
+        // Check if refresh token exists in database (not revoked)
+        const tokens = await queryDatabase(
+            'SELECT * FROM refresh_tokens WHERE token = ? AND expires_at > NOW()',
+            [token]
+        );
+
+        if (!tokens.length) {
+            return res.status(401).json({ 
+                error: 'Refresh token revoked or expired'
+            });
         }
 
-        const isPasswordCorrect = await bcrypt.compare(password, user[0].password);
-        if (!isPasswordCorrect) {
-            return res.status(400).json({ message: "Incorrect password" });
-        }
+        // Generate new access token
+        const newAccessToken = createAccessToken(username);
 
-        const token = createUserToken(user[0].username);
-        res.cookie('Token', token, { httpOnly: true, secure: true, sameSite: 'Strict' });
-        const { password: _, email, ...userData } = user[0];
-        res.status(200).json(userData);
+        // Set new access token cookie
+        res.cookie('accessToken', newAccessToken, ACCESS_COOKIE_CONFIG);
+
+        res.status(200).json({ 
+            message: 'Token refreshed successfully'
+        });
     } catch (error) {
-        res.status(500).json({ error: 'An internal error occurred' });
+        handleError(res, 500, 'Token refresh failed', error);
     }
 }
 
 // User Logout
 export async function handleUserLogout(req, res) {
     try {
-        res.cookie('Token', '', { maxAge: 1 });
-        res.status(200).send('Logout successful');
-    } catch (error) {
-        res.status(400).json({ error: 'An error occurred while logging out' });
-    }
-}
+        const refreshToken = req.cookies.refreshToken;
 
-// User Signup
-export async function handleUserSignUp(req, res) {
-    const errors = validationResult(req);
-    if (!errors.isEmpty()) {
-        return res.status(400).json({ errors: errors.array() });
-    }
-
-    const { username, password, name } = req.body;
-    try {
-        const userExists = await queryDatabase('SELECT * FROM users WHERE username = ?', [username]);
-        if (userExists.length) {
-            return res.status(400).json({ message: 'Username already exists' });
+        if (refreshToken) {
+            // Revoke refresh token from database
+            await queryDatabase(
+                'DELETE FROM refresh_tokens WHERE token = ?',
+                [refreshToken]
+            );
         }
 
-        const hashedPassword = await bcrypt.hash(password, 10);
-        await queryDatabase('INSERT INTO users (username, name, password) VALUES (?, ?, ?)', [username, name, hashedPassword]);
-
-        const newUser = await queryDatabase('SELECT * FROM users WHERE username = ?', [username]);
-        const token = createUserToken(username);
-        res.cookie('Token', token, { httpOnly: true, secure: true, sameSite: 'Strict' });
-
-        const { password: _, ...userData } = newUser[0];
-        res.status(201).json({ user: userData, token });
-    } catch (err) {
-        res.status(500).json({ error: 'Internal Server Error' });
+        // Clear both cookies
+        res.clearCookie('accessToken');
+        res.clearCookie('refreshToken', { path: '/api/user/refresh' });
+        
+        res.status(200).json({ message: 'Logout successful' });
+    } catch (error) {
+        handleError(res, 400, 'Logout failed', error);
     }
 }
 
-export async function getUserInfo(req,res) {
-    const {username} = req.body;
-    try{
-        const user = await queryDatabase('SELECT * FROM users WHERE username = ?', [username]);
-        res.status(200).json(user);
-    }catch(err){
-        res.json({error: 'Failed to fetch user info'});
+// Get User Info
+export async function getUserInfo(req, res) {
+  const { username } = req.body;
+
+  if (!username) {
+    return handleError(res, 400, 'Username is required');
+  }
+
+  try {
+    const users = await queryDatabase(
+      'SELECT username, name, pfp_url, bio, location, created_at FROM users WHERE username = ?',
+      [username]
+    );
+
+    if (!users.length) {
+      return res.status(404).json({ error: 'User not found' });
     }
-    
+
+    res.status(200).json(users[0]);
+  } catch (error) {
+    handleError(res, 500, 'Failed to fetch user info', error);
+  }
 }
+
 // Handle User Movie Log
 export async function handleUserMovieLog(req, res) {
-    const logDetails = req.body;
-    try {
-        const result = await queryDatabase(
-            'INSERT INTO user_reviews(username, movie_id, rating, review_date, review_text, rewatch, spoilers) VALUES (?, ?, ?, ?, ?, ?, ?)',
-            [logDetails.username, logDetails.movie.movie_id, logDetails.rating, logDetails.date, logDetails.review, logDetails.rewatch, logDetails.spoilers]
-        );
+  const { username, movie, rating, date, review, rewatch, spoilers } = req.body;
 
-        const [insertedLog] = await queryDatabase('SELECT * FROM user_reviews WHERE review_id = ?', [result.insertId]);
-        res.status(200).json(insertedLog);
-    } catch (err) {
-        res.status(500).json({ error: 'An error occurred while logging the movie' });
-    }
+  if (!username || !movie.id || !rating) {
+    return handleError(res, 400, 'Missing required fields');
+  }
+
+  try {
+    const result = await queryDatabase(
+      `INSERT INTO user_reviews (username, movie_id, rating, review_date, review_text, rewatch, spoilers) 
+       VALUES (?, ?, ?, ?, ?, ?, ?)`,
+      [username, movie.id, rating, date, review, rewatch || false, spoilers || false]
+    );
+
+    const reviews = await queryDatabase(
+      'SELECT * FROM user_reviews WHERE review_id = ?',
+      [result.insertId]
+    );
+
+    res.status(201).json(reviews[0]);
+  } catch (error) {
+    handleError(res, 500, 'Failed to log movie', error);
+  }
 }
 
-export async function handleGetUserFavourites(req,res){
-    const username = req.params.username;
-    try {
-        const results = await queryDatabase(
-            'SELECT uf.*,movies.* FROM user_favourites uf JOIN movies ON uf.movie_id = movies.movie_id JOIN users ON uf.username = users.username WHERE uf.username = ?',
-            [username]
-        );
-        res.status(200).json(results);
-    }catch(err){
-        res.status(500).json({error:'An error occurred while fetching favourites' });
-    }
+// Get User Favorites
+export async function handleGetUserFavourites(req, res) {
+  const { username } = req.params;
+
+  if (!username) {
+    return handleError(res, 400, 'Username is required');
+  }
+
+  try {
+    const favourites = await queryDatabase(
+      `SELECT uf.* FROM user_favourites uf 
+       WHERE uf.username = ?`,
+      [username]
+    );
+    const results = await Promise.all(
+      favourites.map( async (favourite)=>{
+        const response = await getMovieDetails(favourite.movie_id);
+        return {...favourite, ...response};
+      })
+    )
+
+    res.status(200).json(results);
+  } catch (error) {
+    handleError(res, 500, 'Failed to fetch favorites', error);
+  }
 }
 
+// Get User Followers
 export async function handleGetUserFollowers(req, res) {
-    const username = req.params.username;
-    try {
-        const results = await queryDatabase(
-            'SELECT users.* FROM followers JOIN users ON followers.follower_username = users.username WHERE followers.following_username = ?',
-            [username]
-        );
-        res.status(200).json(results);
-    } catch (err) {
-        res.status(500).json({ error: 'An error occurred while fetching followers' });
-    }
+  const { username } = req.params;
+
+  if (!username) {
+    return handleError(res, 400, 'Username is required');
+  }
+
+  try {
+    const results = await queryDatabase(
+      `SELECT u.username, u.name, u.pfp_url FROM followers f 
+       JOIN users u ON f.follower_username = u.username 
+       WHERE f.following_username = ?`,
+      [username]
+    );
+
+    res.status(200).json(results);
+  } catch (error) {
+    handleError(res, 500, 'Failed to fetch followers', error);
+  }
 }
 
+// Get User Following
 export async function handleGetUserFollowing(req, res) {
-    const username = req.params.username;
-    try {
-        const results = await queryDatabase(
-            'SELECT users.* FROM followers JOIN users ON followers.following_username = users.username WHERE followers.follower_username = ?',
-            [username]
-        );
-        res.status(200).json(results);
-    } catch (err) {
-        res.status(500).json({ error: 'An error occurred while fetching following users' });
-    }
+  const { username } = req.params;
+
+  if (!username) {
+    return handleError(res, 400, 'Username is required');
+  }
+
+  try {
+    const results = await queryDatabase(
+      `SELECT u.username, u.name, u.pfp_url FROM followers f 
+       JOIN users u ON f.following_username = u.username 
+       WHERE f.follower_username = ?`,
+      [username]
+    );
+
+    res.status(200).json(results);
+  } catch (error) {
+    handleError(res, 500, 'Failed to fetch following', error);
+  }
 }
 
-
-// Get Profile Info
+// Get Profile Info (with optimized queries)
 export async function handleGetProfileInfo(req, res) {
-    const username = req.params.username;
-    try {
-        const userInfo = await queryDatabase(`
-            SELECT username, name, pfp_url, bio, location, gender, created_at
-            FROM users 
-            WHERE username = ?
-        `, [username]);
+  const { username } = req.params;
 
-        const reviews = await queryDatabase(
-            'SELECT user_reviews.*,movies.* FROM user_reviews JOIN movies on user_reviews.movie_id = movies.movie_id WHERE user_reviews.username = ?',
-            [username]
-        );
+  if (!username) {
+    return handleError(res, 400, 'Username is required');
+  }
 
-        const favourites = await queryDatabase(
-            'SELECT uf.*,movies.* FROM user_favourites uf JOIN movies ON uf.movie_id = movies.movie_id JOIN users ON uf.username = users.username WHERE uf.username = ?',
-            [username]
-        );
-
-        const followers = await queryDatabase(
-            'SELECT users.* FROM followers JOIN users ON followers.follower_username = users.username WHERE followers.following_username = ?',
-            [username]
-        );
-
-        const following = await queryDatabase(
-            'SELECT users.* FROM followers JOIN users ON followers.following_username = users.username WHERE followers.follower_username = ?',
-            [username]
-        );
-
-        const response = {
-            userinfo: userInfo.length ? userInfo[0] : {}, 
-            reviews,
-            favourites,
-            followers,
-            following
-        };
-        res.json(response);
-    } catch (error) {
-        console.error(error);
-        res.status(500).json({ error: 'An error occurred while fetching profile information' });
-    }
+  try {
+    // Fetch all data in parallel
+    const [userInfo, reviews, favourites, followers, following] = await Promise.all([
+      queryDatabase(
+        `SELECT username, name, pfp_url, bio, location, gender, created_at FROM users WHERE username = ?`,
+        [username]
+      ),
+      queryDatabase(
+        `SELECT ur.* FROM user_reviews ur 
+         WHERE ur.username = ?
+         ORDER BY ur.review_date DESC`,
+        [username]
+      ),
+      queryDatabase(
+        `SELECT uf.* FROM user_favourites uf 
+         WHERE uf.username = ?`,
+        [username]
+      ),
+      queryDatabase(
+        `SELECT u.username, u.name, u.pfp_url FROM followers f 
+         JOIN users u ON f.follower_username = u.username 
+         WHERE f.following_username = ?`,
+        [username]
+      ),
+      queryDatabase(
+        `SELECT u.username, u.name, u.pfp_url FROM followers f 
+         JOIN users u ON f.following_username = u.username 
+         WHERE f.follower_username = ?`,
+        [username]
+      ),
+    ]);
+    const populated_reviews = await Promise.all(
+      reviews.map(async (review)=>{
+        const response = await getMovieDetails(review.movie_id);
+        return {...review, ...response} 
+      }
+    ))
+    const populated_favs = await Promise.all(
+      favourites.map( async (favourite)=>{
+        const response = await getMovieDetails(favourite.movie_id);
+        return {...favourite, ...response};
+      })
+    )
+    res.status(200).json({
+      userInfo: userInfo[0] || {},
+      reviews : populated_reviews,
+      favourites : populated_favs,
+      followers,
+      following,
+      stats: {
+        reviewCount: reviews.length,
+        favouriteCount: favourites.length,
+        followerCount: followers.length,
+        followingCount: following.length,
+      }
+    });
+  } catch (error) {
+    handleError(res, 500, 'Failed to fetch profile', error);
+  }
 }
 
+// Follow User
 export async function handleFollowRequest(req, res) {
-    const { userToFollow, loggedInUser } = req.body;
-    try {
-        // Check if already following
-        const existingFollow = await queryDatabase(
-            'SELECT * FROM followers WHERE follower_username=? AND following_username=?',
-            [loggedInUser, userToFollow]
-        );
+  const { userToFollow, loggedInUser } = req.body;
 
-        if (existingFollow.length > 0) {
-            return res.status(400).json({ message: 'You are already following this user' });
-        }
+  if (!userToFollow || !loggedInUser) {
+    return handleError(res, 400, 'Missing required fields');
+  }
 
-        // Insert follow relationship
-        await queryDatabase(
-            'INSERT INTO followers(follower_username, following_username) VALUES(?, ?)',
-            [loggedInUser, userToFollow]
-        );
+  if (userToFollow === loggedInUser) {
+    return handleError(res, 400, 'Cannot follow yourself');
+  }
 
-        // Return followed user's info
-        const newFollowing = await queryDatabase(
-            'SELECT * FROM users WHERE username=?',
-            [userToFollow]
-        );
-        res.status(200).json(newFollowing);
-    } catch (err) {
-        res.status(500).send('Error occurred while following the user');
+  try {
+    // Check if already following
+    const existing = await queryDatabase(
+      'SELECT * FROM followers WHERE follower_username = ? AND following_username = ?',
+      [loggedInUser, userToFollow]
+    );
+
+    if (existing.length) {
+      return res.status(409).json({ error: 'Already following this user' });
     }
+
+    // Insert follow
+    await queryDatabase(
+      'INSERT INTO followers (follower_username, following_username) VALUES (?, ?)',
+      [loggedInUser, userToFollow]
+    );
+
+    // Return followed user's info
+    const users = await queryDatabase(
+      'SELECT username, name, pfp_url, bio FROM users WHERE username = ?',
+      [userToFollow]
+    );
+
+    res.status(201).json(users[0]);
+  } catch (error) {
+    handleError(res, 500, 'Failed to follow user', error);
+  }
 }
 
+// Unfollow User
 export async function handleUnfollowRequest(req, res) {
-    const { userToUnfollow, loggedInUser } = req.body;
-    try {
-        // Check if follow relationship exists
-        const existingFollow = await queryDatabase(
-            'SELECT * FROM followers WHERE follower_username=? AND following_username=?',
-            [loggedInUser, userToUnfollow]
-        );
+  const { userToUnfollow, loggedInUser } = req.body;
 
-        if (existingFollow.length === 0) {
-            return res.status(400).json({ message: 'You are not following this user' });
-        }
+  if (!userToUnfollow || !loggedInUser) {
+    return handleError(res, 400, 'Missing required fields');
+  }
 
-        // Delete follow relationship
-        await queryDatabase(
-            'DELETE FROM followers WHERE follower_username=? AND following_username=?',
-            [loggedInUser, userToUnfollow]
-        );
+  try {
+    // Check if follow exists
+    const existing = await queryDatabase(
+      'SELECT * FROM followers WHERE follower_username = ? AND following_username = ?',
+      [loggedInUser, userToUnfollow]
+    );
 
-        const unfollowedUser = await queryDatabase(
-            'SELECT * FROM users WHERE username=?',
-            [userToUnfollow]
-        );
-        res.status(200).json(unfollowedUser);
-    } catch (err) {
-        res.status(500).send('Error occurred while unfollowing the user');
+    if (!existing.length) {
+      return res.status(404).json({ error: 'Not following this user' });
     }
+
+    // Delete follow
+    await queryDatabase(
+      'DELETE FROM followers WHERE follower_username = ? AND following_username = ?',
+      [loggedInUser, userToUnfollow]
+    );
+
+    const users = await queryDatabase(
+      'SELECT username, name, pfp_url, bio FROM users WHERE username = ?',
+      [userToUnfollow]
+    );
+
+    res.status(200).json(users[0]);
+  } catch (error) {
+    handleError(res, 500, 'Failed to unfollow user', error);
+  }
 }
 
+// Get Friends Latest Activity (optimized query)
 export async function handleGetFriendsLatestActivity(req, res) {
-    const { following } = req.body;
+  const { following } = req.body;
 
-    // Map the usernames from the 'following' array
-    const usernames = following?.map(user => user.username);
-    if (!usernames || usernames.length === 0) {
-        return res.status(400).json({ message: 'No usernames provided.' });
-    }
+  const usernames = following?.map(user => user.username);
+  if (!usernames?.length) {
+    return res.status(400).json({ error: 'No users to fetch activity for' });
+  }
 
-    try {
-        // Create a placeholder string for the 'IN' clause based on the number of usernames
-        const placeholders = usernames.map(() => '?').join(', ');
+  try {
+    const placeholders = usernames.map(() => '?').join(', ');
 
-        const query = `
-            SELECT ur.*, m.*
-            FROM user_reviews ur
-            JOIN (
-                SELECT username, MAX(review_date) AS latest_review_date
-                FROM user_reviews
-                WHERE username IN (${placeholders})
-                GROUP BY username
-            ) latest_reviews ON ur.username = latest_reviews.username 
-                            AND ur.review_date = latest_reviews.latest_review_date
-            JOIN (
-                SELECT username, review_date, MAX(review_id) AS latest_review_id
-                FROM user_reviews
-                WHERE username IN (${placeholders})
-                GROUP BY username, review_date
-            ) latest_ids ON ur.username = latest_ids.username
-                        AND ur.review_date = latest_ids.review_date
-                        AND ur.review_id = latest_ids.latest_review_id
-            JOIN movies m ON m.movie_id = ur.movie_id;
-        `;
+    const query = `
+      SELECT ur.*
+      FROM user_reviews ur
+      JOIN (
+        SELECT username, MAX(review_date) AS latest_review
+        FROM user_reviews
+        WHERE username IN (${placeholders})
+        GROUP BY username
+      ) latest
+        ON ur.username = latest.username
+       AND ur.review_date = latest.latest_review
+      ORDER BY ur.review_date DESC
+    `;
 
-        // Execute the query with the usernames as the parameters
-        const rows = await queryDatabase(query, [...usernames, ...usernames]); // pass usernames twice for both IN clauses
-        res.json(rows);
-    } catch (error) {
-        console.error('Error fetching latest reviews:', error);
-        res.status(500).json({ message: 'Error fetching the latest movie reviews', error });
-    }
+    const rows = await queryDatabase(query, usernames);
+    const populated_results = await Promise.all(
+      rows.map(async (row)=>{
+        const response = await getMovieDetails(row.movie_id);
+        return {...row, ...response};
+      })
+    )
+    res.status(200).json(populated_results);
+  } catch (error) {
+    handleError(res, 500, 'Failed to fetch activity', error);
+  }
 }
 
-export async function handleUpdateProfile(req,res){
 
-    const { username, name, bio, location, favourites } = req.body; 
-    // favourites expected to be an array of up to 4 movie IDs (integers)
-    if (!Array.isArray(favourites) || favourites.length > 4) {
-        return res.status(400).json({ message: 'Favourites must be an array with max 4 items' });
-    }
-    try {
-        // Update user profile info
+// Update Profile
+export async function handleUpdateProfile(req, res) {
+  const { username, name, bio, location, favourites } = req.body;
+
+  if (!username || !name) {
+    return handleError(res, 400, 'Username and name are required');
+  }
+
+  if (!Array.isArray(favourites) || favourites.length > 5) {
+    return handleError(res, 400, 'Favourites must be an array with max 5 items');
+  }
+
+  try {
+    // Update user info
+    await queryDatabase(
+      'UPDATE users SET name = ?, bio = ?, location = ? WHERE username = ?',
+      [name, bio || null, location || null, username]
+    );
+
+    // Delete old favorites
+    await queryDatabase('DELETE FROM user_favourites WHERE username = ?', [username]);
+
+    // Insert new favorites
+    const filteredFavourites = favourites.filter(id => id != null);
+    
+    if (filteredFavourites.length > 0) {
+      const values = filteredFavourites
+        .map(movieId => [username, movieId]);
+      
+      // Use parameterized query instead of string concatenation
+      for (const [user, movieId] of values) {
         await queryDatabase(
-            `UPDATE users SET name = ?, bio = ?, location = ? WHERE username = ?`,
-            [name, bio, location, username]
+          'INSERT INTO user_favourites (username, movie_id) VALUES (?, ?)',
+          [user, movieId]
         );
-
-        // Delete old favourites for user
-        await queryDatabase(`DELETE FROM user_favourites WHERE username = ?`, [username]);
-
-        // Insert new favourites
-        const filteredFavourites = favourites.filter(movie_id => movie_id !== null);
-
-        if (filteredFavourites.length > 0) {
-        const values = filteredFavourites
-            .map(movie_id => `(${mysql.escape(username)}, ${mysql.escape(movie_id)})`)
-            .join(', ');
-
-        const sql = `INSERT INTO user_favourites (username, movie_id) VALUES ${values}`;
-        await queryDatabase(sql);
-        }
-        const updatedFavourites = await queryDatabase(
-            `SELECT m.* FROM user_favourites uf JOIN movies m on uf.movie_id = m.movie_id WHERE username = ?`,
-            [username]
-        );
-
-        // Send updated profile back
-        res.json({
-            username,
-            name,
-            bio,
-            location,
-            favourites: updatedFavourites.map(fav => fav.movie_id)
-        });
-    } catch (err) {
-        console.error('Error updating profile:', err);
-        res.status(500).json({ message: 'Server error' });
+      }
     }
+
+    // Fetch updated favorites
+    const updatedFavourites = await queryDatabase(
+      'SELECT movie_id FROM user_favourites WHERE username = ?',
+      [username]
+    );
+
+    res.status(200).json({
+      username,
+      name,
+      bio,
+      location,
+      favourites: updatedFavourites.map(fav => fav.movie_id)
+    });
+  } catch (error) {
+    handleError(res, 500, 'Failed to update profile', error);
+  }
 }
