@@ -2,6 +2,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 const base = import.meta.env.VITE_API_BASE_URL;
+const AUTH_ROUTES = ['/user/login', '/user/signup', '/user/verify'];
 
 // Create axios instance with credentials
 export const apiClient = axios.create({
@@ -16,29 +17,37 @@ apiClient.interceptors.response.use(
   async (error) => {
     const originalRequest = error.config;
 
-    // Don't retry if it's the refresh endpoint itself
+    // If no response, just reject
+    if (!error.response) {
+      return Promise.reject(error);
+    }
+
+    //Never refresh on auth routes
+    if (AUTH_ROUTES.some(route => originalRequest.url?.includes(route))) {
+      return Promise.reject(error);
+    }
+
+    // Never retry refresh endpoint itself
     if (originalRequest.url?.includes('/user/refresh')) {
       return Promise.reject(error);
     }
 
-    // If 401 and haven't retried yet, try to refresh token
-    if (error.response?.status === 401 && !originalRequest._retry) {
+    // ✅ Only refresh on protected route 401s
+    if (error.response.status === 401 && !originalRequest._retry) {
       originalRequest._retry = true;
-      
+
       try {
-        // Try to refresh token
         await apiClient.post('/user/refresh');
-        
-        // Retry original request
         return apiClient(originalRequest);
       } catch (refreshError) {
-        // Refresh failed - don't redirect here, let the slice handle it
         return Promise.reject(refreshError);
       }
     }
+
     return Promise.reject(error);
   }
 );
+
 
 // Verify authentication status with server
 export const verifyAuth = createAsyncThunk(
@@ -77,7 +86,7 @@ export const signupUser = createAsyncThunk(
       });
       return data.user;
     } catch (error) {
-      const message = error.response?.data?.message || error.message || 'Signup failed';
+      const message = error.response?.data?.error || error.error || 'Signup failed';
       return rejectWithValue(message);
     }
   }

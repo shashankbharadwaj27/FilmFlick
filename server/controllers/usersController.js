@@ -85,7 +85,7 @@ export async function handleUserLogin(req, res) {
 // User Signup
 export async function handleUserSignUp(req, res) {
   const { username, password, name } = req.body;
-  console.log(req.body)
+
   // Validate input
   if (!username || !password || !name) {
     return handleError(res, 400, 'Username, password, and name are required');
@@ -213,10 +213,20 @@ export async function handleUserLogout(req, res) {
                 [refreshToken]
             );
         }
-
+        
         // Clear both cookies
-        res.clearCookie('accessToken');
-        res.clearCookie('refreshToken', { path: '/api/user/refresh' });
+        res.clearCookie('accessToken', {
+            httpOnly: true,
+            secure: process.env.NODE_ENV === 'production',
+            sameSite: 'strict',
+        });
+            
+        res.clearCookie('refreshToken', {
+            httpOnly: true,
+            secure: process.env.NODE_ENV === 'production',
+            sameSite: 'strict',
+            path: '/api/user'
+        });
         
         res.status(200).json({ message: 'Logout successful' });
     } catch (error) {
