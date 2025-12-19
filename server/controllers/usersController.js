@@ -10,14 +10,14 @@ const COOKIE_CONFIG = { httpOnly: true, secure: true, sameSite: 'Strict' };
 const ACCESS_COOKIE_CONFIG = { 
   httpOnly: true, 
   secure: process.env.NODE_ENV === 'production', // Only HTTPS in production
-  sameSite: 'Strict',
+  sameSite: 'None',
   maxAge: 15 * 60 * 1000 // 15 minutes
 };
 
 const REFRESH_COOKIE_CONFIG = { 
   httpOnly: true, 
   secure: process.env.NODE_ENV === 'production',
-  sameSite: 'Strict',
+  sameSite: 'None',
   maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
   path: '/api/user' // Only sent to refresh endpoint
 };
@@ -218,13 +218,13 @@ export async function handleUserLogout(req, res) {
         res.clearCookie('accessToken', {
             httpOnly: true,
             secure: process.env.NODE_ENV === 'production',
-            sameSite: 'strict',
+            sameSite: 'None',
         });
             
         res.clearCookie('refreshToken', {
             httpOnly: true,
             secure: process.env.NODE_ENV === 'production',
-            sameSite: 'strict',
+            sameSite: 'None',
             path: '/api/user'
         });
         
